@@ -55,6 +55,14 @@
             }
         },
         {
+            "Key": "084b0d87-4b94-44e9-9929-b68af420f665",
+            "Value": {
+                "id": "efd75953-05f4-47f3-b7a3-91cf4a7de12e",
+                "resourcePath": "objects\\Bush\\Bush.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0fe6b64a-1fe3-4037-a21c-fdd9357408b5",
             "Value": {
                 "id": "52054543-ce4f-4ec6-9fc7-358d7176c964",
@@ -100,6 +108,14 @@
                 "id": "201ebf15-dbcf-49b9-996d-fa7dc00fcbbb",
                 "resourcePath": "objects\\Camera\\Camera.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "27ab4fd8-0ad5-4d95-800b-546f2ea6b6c2",
+            "Value": {
+                "id": "4288f5f6-a190-4aae-bab1-4a3349dc0f06",
+                "resourcePath": "sprites\\res1\\res1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -231,11 +247,35 @@
             }
         },
         {
+            "Key": "9e4b7540-1606-4ac3-8b19-db0af1af4824",
+            "Value": {
+                "id": "fa724b59-e3c8-445e-9c2e-481a63403298",
+                "resourcePath": "objects\\Tree\\Tree.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "9f69cc09-92be-49e6-a341-d0531f3d3d2d",
+            "Value": {
+                "id": "725292f2-4a53-4cec-be66-ba64ba90d046",
+                "resourcePath": "views\\9f69cc09-92be-49e6-a341-d0531f3d3d2d.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "a4785389-0366-4784-bed6-833844f1fc97",
             "Value": {
                 "id": "e6fde01d-e4bd-41c8-a649-fc0ef340c8bd",
                 "resourcePath": "views\\a4785389-0366-4784-bed6-833844f1fc97.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a4b65753-7bdd-4451-9aa1-d01a8ade809a",
+            "Value": {
+                "id": "954e407f-3f7c-42e0-a078-c83a9cfc2d86",
+                "resourcePath": "sprites\\res2\\res2.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

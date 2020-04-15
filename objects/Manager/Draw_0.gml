@@ -20,3 +20,9 @@ yy = 0; repeat(count) {
 }
 
 ds_grid_destroy(y_order)
+
+if keyboard_check(vk_space) {
+	draw_set_alpha(.15)
+	mp_grid_draw(grid)
+	draw_set_alpha(1)
+}

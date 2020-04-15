@@ -1,0 +1,12 @@
+First pass at:
+- Basic combat (drafting, auto-fire, melee, weapon equip)
+- Basic survival (food, gathering resources)
+- Crafting (crafting benches, walls, prepared food and items)
+- Character customization (random, selecting properties from menu)
+- Grid and grid overlay for item placement
+- Lighting
+
+Inspo:
+- Rimworld
+- Minecraft
+
