@@ -1,11 +1,8 @@
 draw_self()
 
 if selected {
-	offset_x = x-sprite_xoffset-1
-	offset_y = y-sprite_yoffset-1
-	box_width = sprite_width
-	box_height = sprite_height
-	draw_set_alpha(.75)
-	draw_rectangle(offset_x, offset_y, offset_x+box_width, offset_y+box_height, true)
-	draw_set_alpha(1)
+	draw_sprite_part(select0, image_index,0,0,6,6,x-2,y-2)
+	draw_sprite_part(select0, image_index,14,0,6,6,x+sprite_width-4,y-2)
+	draw_sprite_part(select0, image_index,14,14,6,6,x+sprite_width-4,y+sprite_height-4)
+	draw_sprite_part(select0, image_index,0,14,6,6,x-2,y+sprite_height-4)
 }

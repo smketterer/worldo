@@ -223,6 +223,14 @@
             }
         },
         {
+            "Key": "71b7d669-b31b-4d29-8350-4909aadc0c17",
+            "Value": {
+                "id": "b8155ebe-528c-476d-a4e6-1ebd95287d3d",
+                "resourcePath": "sprites\\lighting\\lighting.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "728f5607-cac6-412b-9aa6-f0a7ded69890",
             "Value": {
                 "id": "5fc11eae-f01e-477a-a10a-b99b87a2d861",
@@ -327,11 +335,35 @@
             }
         },
         {
+            "Key": "caae5a58-48f4-4ce5-9d74-729163b56846",
+            "Value": {
+                "id": "50845ea3-f678-4712-972d-28f821d7fa51",
+                "resourcePath": "rooms\\room01\\room01.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "cc98d028-7bdd-4680-85f3-c87a7baa481e",
             "Value": {
                 "id": "4a8dce5f-19b5-4f9f-86d7-6dd5a568bd49",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "cfd19be0-a985-4e30-a4b4-89795d7c9add",
+            "Value": {
+                "id": "a1842749-9c6d-4f5e-8255-8a7a0ae4fa06",
+                "resourcePath": "views\\cfd19be0-a985-4e30-a4b4-89795d7c9add.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "d49a54dd-22d9-42fa-8575-5a6287278698",
+            "Value": {
+                "id": "b8dbbffc-4c6a-4a7b-823b-757e33b61716",
+                "resourcePath": "sprites\\select1\\select1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -347,6 +379,22 @@
             "Value": {
                 "id": "2adbaed4-c60b-44ee-9c1d-c86d079b0011",
                 "resourcePath": "views\\dd713c9a-da32-4f81-b1e3-8bcae3cea027.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e5240d99-6e7e-4b07-9548-34f52013fa9e",
+            "Value": {
+                "id": "ee3b9ead-0c05-481e-84c9-81881e9e9cac",
+                "resourcePath": "sprites\\select0\\select0.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "e864eab8-1212-4285-a26e-00ae0c630b6e",
+            "Value": {
+                "id": "edb01bc3-1835-4d31-87bf-1a3cf6781416",
+                "resourcePath": "views\\e864eab8-1212-4285-a26e-00ae0c630b6e.yy",
                 "resourceType": "GMFolder"
             }
         },

@@ -1,4 +1,9 @@
-// Quick script to set depth = -y
+if not keyboard_check(vk_space) {
+	draw_set_alpha(.25)
+	mp_grid_draw(grid)
+	draw_set_alpha(1)
+}
+
 var y_order = ds_grid_create(2,1)
 var count = instance_number(Entity)
 ds_grid_resize(y_order, 2, count)
@@ -20,9 +25,3 @@ yy = 0; repeat(count) {
 }
 
 ds_grid_destroy(y_order)
-
-if keyboard_check(vk_space) {
-	draw_set_alpha(.15)
-	mp_grid_draw(grid)
-	draw_set_alpha(1)
-}

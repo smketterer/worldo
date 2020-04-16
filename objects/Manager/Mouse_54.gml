@@ -23,7 +23,7 @@ for (var i=0; i<ds_list_size(selected); i++) {
 	if mp_grid_get_cell(Manager.grid, goal_cell_x, goal_cell_y) == 0 and got_path {
 		mp_grid_add_cell(Manager.grid, goal_cell_x, goal_cell_y)
 		with (instance) {
-			path_start(path, 2, 0, false)
+			path_start(path, instance.base_path_speed * Manager.timescale, 0, false)
 		}
 		show_debug_message(string(instance) + " clear to move to " + string(goal_cell_x) + ", " + string(goal_cell_y))
 	} else {
@@ -43,7 +43,7 @@ for (var i=0; i<ds_list_size(selected); i++) {
 					var got_path = mp_grid_path(Manager.grid, path, x, y, gx * cellsize, gy * cellsize, true)
 					mp_grid_add_cell(Manager.grid, gx, gy)
 					if got_path {
-						path_start(path, 2, 0, false)
+						path_start(path, instance.base_path_speed * Manager.timescale, 0, false)
 						solution = true
 					}
 				} else {
