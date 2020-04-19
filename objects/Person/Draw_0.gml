@@ -14,6 +14,6 @@ if moving {
 
 current_xscale = lerp(current_xscale, dir, .15)
 
-draw_sprite(shadow, image_index, x+8, y+8)
+draw_sprite(charactershadow, image_index, x+8, y+8)
 draw_sprite_ext(sprite_index, image_index, x+8, draw_y+8, current_xscale, image_yscale, image_angle, image_blend, image_alpha)
 draw_sprite_ext(hands_sprite_index, image_index, x+8, draw_y+8, current_xscale, image_yscale, image_angle, image_blend, image_alpha)

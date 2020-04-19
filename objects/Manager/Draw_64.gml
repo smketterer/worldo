@@ -1,9 +1,3 @@
-draw_set_alpha(current_darkness)
-draw_rectangle_color(0,0,window_get_width(),window_get_height(),current_colour,current_colour,current_colour,current_colour,false)
-draw_set_alpha(1)
-
-draw_set_color(c_white)
-
 str_selected = ""
 size = ds_list_size(selected)
 for (var i=0; i<size; i++) {
