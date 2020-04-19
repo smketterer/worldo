@@ -37,6 +37,10 @@ current_colour = merge_color(array_get(current_phase,1),array_get(next_phase,1),
 current_darkness = array_get(current_phase,2) - ((array_get(current_phase,2) - array_get(next_phase,2)) * phase_amount)
 #endregion
 
+#region Lighting tick
+++tick;
+#endregion
+
 if keyboard_check_pressed(vk_pageup) {
 	if timescale < 5 {
 		timescale += .5

@@ -9,6 +9,11 @@ draw_set_font(font0)
 
 timescale = 1
 
+#region Lighting init
+tick = 0;
+dirty = false;
+#endregion
+
 #region Day and night cycle
 seconds = 60 * 60 * 17 // noon
 minutes = 0

@@ -127,14 +127,6 @@
             }
         },
         {
-            "Key": "17971c8d-2acd-4898-a643-bcbe52c12dae",
-            "Value": {
-                "id": "df0b019b-28b3-4065-94e7-5729ed3fdb49",
-                "resourcePath": "sprites\\floor0\\floor0.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "18e2cb4e-c679-4b7d-bae5-61cf28035bed",
             "Value": {
                 "id": "5e61240c-54c4-4b9f-926c-ac51c2f37a2f",
@@ -162,7 +154,7 @@
             "Key": "1e6efb2b-6ef1-4169-844b-ca0959157fe8",
             "Value": {
                 "id": "bac0a4e9-de40-4184-8f92-d3dcab6c7683",
-                "resourcePath": "sprites\\floor1\\floor1.yy",
+                "resourcePath": "sprites\\floor0\\floor0.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -436,14 +428,6 @@
                 "id": "aa3f3e71-ec2c-4e6b-87fd-fc56bd9655d7",
                 "resourcePath": "views\\6bee5331-cf35-43df-b93b-9e1a2123354b.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "6c059270-2efd-43c1-ab15-1a0f3e12454b",
-            "Value": {
-                "id": "6864200e-1eed-4bc6-b696-04325cb1b2fc",
-                "resourcePath": "objects\\LightRenderer\\LightRenderer.yy",
-                "resourceType": "GMObject"
             }
         },
         {

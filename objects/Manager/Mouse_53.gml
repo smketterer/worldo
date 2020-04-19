@@ -8,7 +8,7 @@ if not keyboard_check(vk_control) {
 }
 
 var instance = instance_position(mouse_x, mouse_y, all)
-if instance and ds_list_find_index(selected, instance) < 0 {
+if instance and ds_list_find_index(selected, instance) < 0 and object_is_ancestor(instance.object_index, Entity) {
 	var i = ds_list_find_index(selected, instance)
 	ds_list_add(selected, instance)
 	instance.selected = true
