@@ -28,7 +28,7 @@ ds_grid_destroy(y_order)
 
 #region Day/night overlay
 // See draw_shadow_map for the rest
-draw_set_alpha(Manager.current_darkness / 1.25)
+draw_set_alpha(Manager.current_darkness / 1.5)
 draw_rectangle_color(0,0,room_width,room_height,Manager.current_colour,Manager.current_colour,Manager.current_colour,Manager.current_colour,false)
 draw_set_alpha(1)
 draw_set_color(c_white)

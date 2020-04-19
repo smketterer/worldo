@@ -18,7 +18,7 @@ shader_set(__WORLD_SHADOW_MAP_SHADER);
 
 // Shadow intensity
 // shader_set_uniform_f(global.u_AmbientShadow, global.ambientShadowIntensity);
-shader_set_uniform_f(global.u_AmbientShadow, Manager.current_darkness * 1.25); // @NOTE: Set to current darkness level
+shader_set_uniform_f(global.u_AmbientShadow, Manager.current_darkness * 1.5); // @NOTE: Set to current darkness level
 shader_set_uniform_f_array(global.u_TexelSize_ShadowMap, [1.0 / surface_get_width(surface), 1.0 / surface_get_height(surface)]);
 
 //
