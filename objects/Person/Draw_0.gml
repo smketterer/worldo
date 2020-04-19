@@ -1,9 +1,5 @@
 event_inherited()
 
-if selected {
-	draw_sprite_ext(select1, image_index, x+8, y+8, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
-}
-
 if moving {
 	offset = sin(move_length * Manager.timescale / 2)
 	amount = 1.5

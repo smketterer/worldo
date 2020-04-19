@@ -68,3 +68,18 @@ draw_rectangle_color(0,0,room_width,room_height,Manager.current_colour,Manager.c
 draw_set_alpha(1)
 draw_set_color(c_white)
 #endregion
+
+#region Draw HUD elements
+with (Entity) {
+	gpu_set_blendmode(bm_add)
+	if selected and object_is_ancestor(id.object_index,Block) {
+		draw_sprite_part(select0, image_index,0,0,6,6,x-2,y-2)
+		draw_sprite_part(select0, image_index,14,0,6,6,x+sprite_width-4,y-2)
+		draw_sprite_part(select0, image_index,14,14,6,6,x+sprite_width-4,y+sprite_height-4)
+		draw_sprite_part(select0, image_index,0,14,6,6,x-2,y+sprite_height-4)
+	} else if selected and object_is_ancestor(id.object_index, Movable) {
+		draw_sprite_ext(select1, image_index, x+8, y+8, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+	}
+	gpu_set_blendmode(bm_normal)
+}
+#endregion
