@@ -132,11 +132,6 @@ for(var i = 0, firstLight = true; i < lightCount; ++i) {
 	if(firstLight) {
 		// Clear the shadow map
 		draw_clear_alpha(c_black, 0);
-		/*
-		draw_set_alpha(Manager.current_darkness)
-		draw_rectangle_color(0,0,25600,25600,Manager.current_colour,Manager.current_colour,Manager.current_colour,Manager.current_colour,false)
-		draw_set_alpha(1)
-		*/
 		firstLight = false;
 	}
 

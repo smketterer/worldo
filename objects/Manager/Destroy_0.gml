@@ -1,1 +1,1 @@
-lighting_free();
+lighting_free()

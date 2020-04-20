@@ -1,0 +1,1 @@
+color = merge_color(c_orange,c_white,.25)
