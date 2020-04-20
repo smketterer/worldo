@@ -1,18 +1,18 @@
 {
-    "id": "89de7426-730b-4055-b016-1c1581c077d0",
+    "id": "c31eeba3-e564-4ee8-823a-7cfb0176723c",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "Entity",
+    "name": "LightAdd",
     "eventList": [
         {
-            "id": "a6b779c2-aafc-4842-abbd-708ac1a32d70",
+            "id": "f2ecf214-4072-493c-86e4-1f8d02de574b",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "89de7426-730b-4055-b016-1c1581c077d0"
+            "eventtype": 8,
+            "m_owner": "c31eeba3-e564-4ee8-823a-7cfb0176723c"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -33,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "00000000-0000-0000-0000-000000000000",
+    "spriteId": "b638e4c3-ee65-447f-8612-0a426e555f1c",
     "visible": true
 }

@@ -10,6 +10,7 @@ draw_set_font(font0)
 timescale = 1
 
 #region Lighting init
+lighting_global();
 tick = 0;
 dirty = false;
 #endregion

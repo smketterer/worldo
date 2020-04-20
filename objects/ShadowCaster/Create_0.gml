@@ -1,9 +1,4 @@
-/// @desc Initialise shadow caster
-
-//
-//	Inherit this event and assign a polygon and (optionally) shadow caster flags
-//	Use eShadowCasterFlags.Static if your shadow caster is unlikely to move between frames!
-//
+event_inherited()
 
 // Child objects set this
 polygon = undefined;
@@ -26,3 +21,5 @@ outside_active_camera = false;
 // The last camera this shadow caster was compared against,
 // as the view array
 last_camera = undefined;
+
+polygon = polygon_from_instance(id)

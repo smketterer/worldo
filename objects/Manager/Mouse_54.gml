@@ -7,6 +7,7 @@ for (var i=0; i<ds_list_size(selected); i++) {
 		continue
 	}
 	mp_grid_add_instances(Manager.grid, Block, false)
+	mp_grid_add_instances(Manager.grid, Lamp, false)
 	
 	with (Entity) {
 		if selected == false {
