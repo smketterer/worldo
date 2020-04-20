@@ -8,6 +8,11 @@ if path_get_length(path) > 0 and path_position < 1 and Manager.timescale > 0 {
 	} else {
 		dir = -1
 	}
+	if direction > 0 and direction < 180 {
+		ydir = 1
+	} else {
+		ydir = 0
+	}
 } else {
 	moving = false
 	move_length = 0

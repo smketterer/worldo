@@ -2,6 +2,7 @@ event_inherited()
 
 draw_y = y
 dir = 1
+ydir = 0
 move_length = 0
 current_xscale = 1
 
