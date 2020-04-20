@@ -1,6 +1,5 @@
 // Create a light from the instance variables
 if (should_initialize) {
-	show_debug_message("inititaliziinggnng")
 	switch(Light_Type) {
 		case "Point Light":
 			light = light_create_point(x, y, Light_Shadow_Length, Light_Color, Light_Range, Light_Intensity);

@@ -10,7 +10,5 @@ light.Light_Shadow_Length = 256
 light.Light_Color = color
 light.should_initialize = true
 
-show_debug_message(light.Light_Color)
-
 light_add = instance_create_layer(x+8,y+3,layer_get_id("Overlays"),LightAdd)
 light_add.color = color

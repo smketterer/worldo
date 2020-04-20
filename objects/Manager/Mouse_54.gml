@@ -24,7 +24,13 @@ for (var i=0; i<ds_list_size(selected); i++) {
 	if mp_grid_get_cell(Manager.grid, goal_cell_x, goal_cell_y) == 0 and got_path {
 		mp_grid_add_cell(Manager.grid, goal_cell_x, goal_cell_y)
 		with (instance) {
-			path_start(path, instance.base_path_speed * Manager.timescale, 0, false)
+			for (var pix=0; pix<path_get_length(path); pix++) {
+				round_x = floor(path_get_point_x(path,pix) / 16) * 16
+				round_y = floor(path_get_point_y(path,pix) / 16) * 16
+				path_change_point(path, pix, round_x, round_y, 100)                                     
+			}
+			path_insert_point(path, 0, x, y, 100);
+			path_start(path, instance.base_path_speed * Manager.timescale, 0, true)
 		}
 		show_debug_message(string(instance) + " clear to move to " + string(goal_cell_x) + ", " + string(goal_cell_y))
 	} else {
@@ -44,7 +50,13 @@ for (var i=0; i<ds_list_size(selected); i++) {
 					var got_path = mp_grid_path(Manager.grid, path, x, y, gx * cellsize, gy * cellsize, true)
 					mp_grid_add_cell(Manager.grid, gx, gy)
 					if got_path {
-						path_start(path, instance.base_path_speed * Manager.timescale, 0, false)
+						for (var pixy=0; pixy<path_get_length(path); pixy++) {
+							round_x = floor(path_get_point_x(path,pixy) / 16) * 16
+							round_y = floor(path_get_point_y(path,pixy) / 16) * 16
+							path_change_point(path, pixy, round_x, round_y, 100)                                     
+						}
+						path_insert_point(path, 0, x, y, 100);
+						path_start(path, instance.base_path_speed * Manager.timescale, 0, true)
 						solution = true
 					}
 				} else {

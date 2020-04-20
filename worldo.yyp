@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "0a33ef05-fe89-4937-b9b5-81ad92b96569",
+            "Value": {
+                "id": "14c62193-8e48-4bc6-895d-2ad127dddaf1",
+                "resourcePath": "objects\\WoodWall\\WoodWall.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "0bc37551-88ad-45ca-ba09-33ccccbb6d7d",
             "Value": {
                 "id": "c4233d18-a704-40bc-af96-2b01074fc03c",
@@ -375,6 +383,14 @@
             }
         },
         {
+            "Key": "5c7d0958-bb7a-4e3d-9630-ee95eb2d156e",
+            "Value": {
+                "id": "86e7488e-ab43-4618-bba8-9509ea2a05b5",
+                "resourcePath": "sprites\\wall01\\wall01.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "5cd9e0fa-50fc-443a-895b-b63065a28c7c",
             "Value": {
                 "id": "2820b08b-c35a-4db9-accd-8a34747e637e",
@@ -484,14 +500,6 @@
                 "id": "e67f60cc-3bd7-4cad-b61c-8090d7c12752",
                 "resourcePath": "views\\70981427-5783-4b93-b89b-f47c6d3473e6.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "70ad8a32-3549-47a8-b578-998ec5d43731",
-            "Value": {
-                "id": "d28a7586-43d6-415b-b831-0c9deb4ed7f9",
-                "resourcePath": "sprites\\wall01\\wall01.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -652,14 +660,6 @@
                 "id": "c7c19b13-7e7a-4fa8-bf0a-4d5bd3bcc170",
                 "resourcePath": "views\\9b0f108f-d8b8-4e20-82a1-8db103120caa.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "9bc8f9f9-2533-4358-83c7-5f78f4f961f2",
-            "Value": {
-                "id": "a55a7d7e-f99b-4466-8e05-b224c2299eb5",
-                "resourcePath": "sprites\\tileset\\tileset.yy",
-                "resourceType": "GMSprite"
             }
         },
         {
@@ -1052,14 +1052,6 @@
                 "id": "132f6cea-3260-4470-b87c-01d4860d843e",
                 "resourcePath": "scripts\\light_create_extension\\light_create_extension.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "f7bcceaa-f2e5-4051-8014-3855931edf03",
-            "Value": {
-                "id": "c3f9c407-0d07-4df6-92ca-bcae14a942d2",
-                "resourcePath": "tilesets\\tileset0\\tileset0.yy",
-                "resourceType": "GMTileSet"
             }
         },
         {

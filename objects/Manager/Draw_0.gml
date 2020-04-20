@@ -76,10 +76,10 @@ with (Entity) {
 	if selected and object_is_ancestor(id.object_index, Movable) {
 		draw_sprite_ext(select1, image_index, x+8, y+8, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 	} else if selected {
-		draw_sprite_part(select0, image_index,0,0,6,6,x-2,y-2)
-		draw_sprite_part(select0, image_index,14,0,6,6,x+sprite_width-4,y-2)
-		draw_sprite_part(select0, image_index,14,14,6,6,x+sprite_width-4,y+sprite_height-4)
-		draw_sprite_part(select0, image_index,0,14,6,6,x-2,y+sprite_height-4)
+		draw_sprite_part(select0,image_index,0,0,6,6,x-2,y-2)
+		draw_sprite_part(select0,image_index,14,0,6,6,x+sprite_width-4,y-2)
+		draw_sprite_part(select0,image_index,14,14,6,6,x+sprite_width-4,y+sprite_height-4)
+		draw_sprite_part(select0,image_index,0,14,6,6,x-2,y+sprite_height-4)
 	}
 	gpu_set_blendmode(bm_normal)
 }
