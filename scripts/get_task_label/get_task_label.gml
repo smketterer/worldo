@@ -8,6 +8,8 @@ switch (task) {
 		return "Drafted"
 	case "CHOP":
 		return "Chopping wood"
+	case "CUT":
+		return "Foraging"
 	default:
 		return "Idle"
 }

@@ -8,7 +8,8 @@
         "c2448046-f27c-4c7f-af43-fddb73f2eba0",
         "16a7b31f-62c2-4319-870c-2bd64b4bb810",
         "0c9cf0cc-c4c2-4f0f-aaaa-e8736b6f1708",
-        "57717bd4-6d96-4b7a-8779-344e572ffcb7"
+        "57717bd4-6d96-4b7a-8779-344e572ffcb7",
+        "580de42b-af91-401f-924c-cc724c77753c"
     ],
     "filterType": "GMScript",
     "folderName": "Work",

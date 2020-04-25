@@ -1,4 +1,4 @@
 event_inherited()
 
 claimed = false
-claimed_by = false
+claimed_by = noone

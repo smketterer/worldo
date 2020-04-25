@@ -67,10 +67,9 @@ if keyboard_check_pressed(ord("R")) {
 	with (Person) {
 		if selected {
 			if ds_priority_find_max(tasks) != "WAR" {
-				queue_clear()
 				queue_add("WAR")
 			} else {
-				queue_clear()
+				queue_pop()
 			}
 		}
 	}
