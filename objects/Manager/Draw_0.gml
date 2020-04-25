@@ -1,5 +1,5 @@
 if !keyboard_check(vk_space) {
-	draw_set_alpha(.25)
+	draw_set_alpha(.1)
 	mp_grid_draw(grid)
 	draw_set_alpha(1)
 }
