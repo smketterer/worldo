@@ -10,13 +10,13 @@ lighting_pre_composite();
 
 if(lightCount == 0) {
 	// They mostly come at night...mostly...
-	show_debug_message("composite_shadow_map(lights): ignoring action, there are no lights");
+	log("composite_shadow_map(lights): ignoring action, there are no lights");
 	return false;
 }
 
 if(!shadow_casters_exist()) {
 	// There are no shadow casters
-	show_debug_message("composite_shadow_map(lights): ignoring action, there are no shadow casters");
+	log("composite_shadow_map(lights): ignoring action, there are no shadow casters");
 	return;
 }
 
@@ -24,7 +24,7 @@ if(!shadow_casters_exist()) {
 var has_shadow_map = shadow_map_ensure_exists(eShadowMap.Global);
 if(!has_shadow_map) {
 	// Failed to create a shadow map
-	show_debug_message("composite_shadow_map(lights): failed to create global shadow map");
+	log("composite_shadow_map(lights): failed to create global shadow map");
 	return false;
 }
 
@@ -92,7 +92,7 @@ for(var i = 0, firstLight = true; i < lightCount; ++i) {
 			var has_shadow_map = shadow_map_ensure_exists(eShadowMap.Light);
 			if(!has_shadow_map) {
 				// Failed to create a shadow map
-				show_debug_message("composite_shadow_map(lights): failed to create light shadow map");
+				log("composite_shadow_map(lights): failed to create light shadow map");
 				return false;
 			}
 			firstUseOfGlobalShadowMap = false;

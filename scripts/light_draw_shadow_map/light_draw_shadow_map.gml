@@ -10,7 +10,7 @@ var update = argument2;
 // Validate argument
 if(__LIGHTING_ERROR_CHECKS && (!ds_exists(light, ds_type_list) || ds_list_size(light) != eLight.Count)) {
 	// This array is not a light
-	show_debug_message("light_draw(light): argument `light` is not a light array");
+	log("light_draw(light): argument `light` is not a light array");
 	return;
 }
 
@@ -18,7 +18,7 @@ if(__LIGHTING_ERROR_CHECKS && (!ds_exists(light, ds_type_list) || ds_list_size(l
 var has_shadow_map = surface_exists(surface);
 if(!has_shadow_map) {
 	// Failed to create a shadow map
-	show_debug_message("light_draw(light): shadow map doesn't exist");
+	log("light_draw(light): shadow map doesn't exist");
 	return;
 }
 

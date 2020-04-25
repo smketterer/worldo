@@ -18,8 +18,13 @@ camera_set_view_size(view_camera[0], new_w, new_h)
 vpos_x = camera_get_view_x(view_camera[0])
 vpos_y = camera_get_view_y(view_camera[0])
 
-var to_x = (keyboard_check(vk_right) - keyboard_check(vk_left)) * 15
-var to_y = (keyboard_check(vk_down) - keyboard_check(vk_up)) * 15
+var cam_speed = 25
+if (keyboard_check(vk_shift)) {
+	cam_speed = 50
+}
+
+var to_x = ((keyboard_check(ord("D")) - keyboard_check(ord("A"))) * cam_speed * (zoom_level))
+var to_y = ((keyboard_check(ord("S")) - keyboard_check(ord("W"))) * cam_speed * (zoom_level))
 
 // change coordinates of camera so zoom is centered
 var new_x = lerp(vpos_x,vpos_x+to_x+(view_w - zoom_level * default_zoom_width)/2, rate)
@@ -37,3 +42,13 @@ if mouse_check_button(mb_middle) {
 }
 
 camera_set_view_pos(view_camera[0], new_x, new_y)
+
+if keyboard_check_pressed(vk_home) {
+	rounded_zoom = round(zoom_level / .5) * .5
+	zoom_level = rounded_zoom - .5	
+}
+
+if keyboard_check_pressed(vk_end) {
+	rounded_zoom = round(zoom_level / .5) * .5
+	zoom_level = rounded_zoom + .5
+}

@@ -1,3 +1,6 @@
+tasks: gardening, crafting, doctor, patient, basic, cook, hunt, construct, haul, mining
+
+
 First pass at:
 - Basic combat (drafting, auto-fire, melee, weapon equip)
 - Basic survival (food, gathering resources)

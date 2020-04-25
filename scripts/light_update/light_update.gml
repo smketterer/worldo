@@ -7,7 +7,7 @@ var light = argument0;
 // Validate argument
 if(__LIGHTING_ERROR_CHECKS && (!ds_exists(light, ds_type_list) || ds_list_size(light) != eLight.Count)) {
 	// This array is not a light
-	show_debug_message("light_update(light): argument `light` is not a light array");
+	log("light_update(light): argument `light` is not a light array");
 	return;
 }
 

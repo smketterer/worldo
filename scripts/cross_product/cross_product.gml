@@ -10,13 +10,13 @@ var v2 = argument1;
 if(__LIGHTING_ERROR_CHECKS) {
 	if(!is_array(v1) || array_length_1d(v1) != eVertex.Count) {
 		// This array is not a vertex
-		show_debug_message("cross_product(v1, v2): argument `v1` is not a vertex array");
+		log("cross_product(v1, v2): argument `v1` is not a vertex array");
 		return undefined;
 	}
 	
 	if(!is_array(v1) || array_length_1d(v1) != eVertex.Count) {
 		// This array is not a vertex
-		show_debug_message("cross_product(v1, v2): argument `v2` is not a vertex array");
+		log("cross_product(v1, v2): argument `v2` is not a vertex array");
 		return undefined;
 	}
 }

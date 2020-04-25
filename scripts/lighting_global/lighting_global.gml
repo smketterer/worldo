@@ -6,7 +6,7 @@
 // Avoid calling this script multiple times
 if(__LIGHTING_ERROR_CHECKS) {
 	if(variable_global_exists("lighting_global_initialised")) {
-		show_debug_message("lighting_global(): lighting already initialised");
+		log("lighting_global(): lighting already initialised");
 		return;
 	}
 	global.lighting_global_initialised = true;

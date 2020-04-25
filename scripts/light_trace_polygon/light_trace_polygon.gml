@@ -14,13 +14,13 @@ var sc_shadow_length = shadow_caster.shadow_length;
 if(__LIGHTING_ERROR_CHECKS) {
 	if(!is_array(polygon) || array_length_1d(polygon) <= 3) {
 		// This array is not a polygon
-		show_debug_message("light_trace_polygon(polygon, light): argument `polygon` is not a polygon array, or has less than 3 vertices");
+		log("light_trace_polygon(polygon, light): argument `polygon` is not a polygon array, or has less than 3 vertices");
 		return undefined;
 	}
 	
 	if(!ds_exists(light, ds_type_list) || ds_list_size(light) != eLight.Count) {
 		// This array is not a light
-		show_debug_message("light_trace_polygon(polygon, light): argument `light` is not a light array");
+		log("light_trace_polygon(polygon, light): argument `light` is not a light array");
 		return undefined;
 	}
 }

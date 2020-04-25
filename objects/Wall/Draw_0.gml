@@ -6,6 +6,10 @@ var left_meeting = place_meeting(x-1,y,object_index);
 var w = sprite_width
 var h = w
 
+if top_meeting && bottom_meeting && right_meeting && left_meeting {
+	draw_sprite_part_ext(tileset,image_index,w*2,0,w,h,x,y,facing,image_yscale,image_blend,1)
+	return
+}
 if bottom_meeting && right_meeting {
 	draw_sprite_part_ext(tileset,image_index,0,0,w,h,x,y,facing,image_yscale,image_blend,1)
 	return

@@ -4,7 +4,11 @@ for (var i=0; i<size; i++) {
 	if i > 0 {
 		str_selected += ","
 	}
-	str_selected += string(ds_list_find_value(selected, i).id)
+	if (variable_instance_exists(ds_list_find_value(selected, i), "name")) {
+		str_selected += string(ds_list_find_value(selected, i).name)
+	} else {
+		str_selected += string(ds_list_find_value(selected, i).id)
+	}
 }
 draw_text(5,4,"[" + str_selected + "]")
 
@@ -22,4 +26,15 @@ for (var i=0; i<size; i++) {
 		str_selected += ","
 	}
 	str_selected += string(ds_list_find_value(selected, i).id)
+}
+
+var pix = 0;
+with (Person) {
+	var offset = 104+(32*pix)
+	draw_sprite(select2, image_index, 14, offset)
+	draw_sprite(sprite_index, 0, 13, offset)
+	draw_sprite(hands_sprite_index, 0, 13, offset)
+	draw_text(28, offset - 18, name)
+	draw_text(28, offset - 6, string(get_task_label(ds_priority_find_max(tasks))) + " | " + string(hp) + "/" + string(max_hp))
+	pix++
 }

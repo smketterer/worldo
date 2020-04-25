@@ -1,4 +1,4 @@
-if keyboard_check(vk_space) {
+if !keyboard_check(vk_space) {
 	draw_set_alpha(.25)
 	mp_grid_draw(grid)
 	draw_set_alpha(1)
@@ -73,7 +73,7 @@ draw_set_color(c_white)
 #region Draw HUD elements
 with (Entity) {
 	gpu_set_blendmode(bm_add)
-	if selected and object_is_ancestor(id.object_index, Movable) {
+	if selected and object_is_ancestor(id.object_index, Worker) {
 		draw_sprite_ext(select1, image_index, x+8, y+8, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 	} else if selected {
 		draw_sprite_part(select0,image_index,0,0,6,6,x-2,y-2)

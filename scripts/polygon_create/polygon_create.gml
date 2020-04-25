@@ -6,7 +6,7 @@ var set = argument0;
 
 // Validate argument
 if(__LIGHTING_ERROR_CHECKS && !is_array(set)) {
-	show_debug_message("polygon_create(set): argument `set` is not an array");
+	log("polygon_create(set): argument `set` is not an array");
 	return undefined;
 }
 
@@ -15,7 +15,7 @@ var length = array_length_1d(set);
 
 // Validate array
 if(__LIGHTING_ERROR_CHECKS && length <= 0) {
-	show_debug_message("polygon_create(set): argument `set` is not an array with a positive length");
+	log("polygon_create(set): argument `set` is not an array with a positive length");
 	return undefined;
 }
 

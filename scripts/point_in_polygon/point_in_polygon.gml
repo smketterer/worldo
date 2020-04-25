@@ -16,13 +16,13 @@ var point = argument1;
 if(__LIGHTING_ERROR_CHECKS) {
 	if(!is_array(polygon) || array_length_1d(polygon) <= 3) {
 		// This array is not a polygon
-		show_debug_message("point_in_polygon(polygon, point): argument `polygon` is not a polygon array, or has less than 3 polygon");
+		log("point_in_polygon(polygon, point): argument `polygon` is not a polygon array, or has less than 3 polygon");
 		return undefined;
 	}
 	
 	if(!is_array(point) || array_length_1d(point) != eVertex.Count) {
 		// This array is not a vertex
-		show_debug_message("point_in_polygon(polygon, point): argument `point` is not a vertex array");
+		log("point_in_polygon(polygon, point): argument `point` is not a vertex array");
 		return undefined;
 	}
 }

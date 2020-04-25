@@ -4,7 +4,7 @@
 
 // Validate argument array
 if(__LIGHTING_ERROR_CHECKS && argument_count <= 1) {
-	show_debug_message("light_ignore_shadow_caster(light, ...): too few arguments (minimum 2)");
+	log("light_ignore_shadow_caster(light, ...): too few arguments (minimum 2)");
 	return;
 }
 
@@ -13,7 +13,7 @@ var light = argument[0];
 // Validate argument
 if(__LIGHTING_ERROR_CHECKS && (!ds_exists(light, ds_type_list) || ds_list_size(light) != eLight.Count)) {
 	// This array is not a light
-	show_debug_message("light_ignore_shadow_caster(light, ...): argument `light` is not a light array");
+	log("light_ignore_shadow_caster(light, ...): argument `light` is not a light array");
 	return;
 }
 

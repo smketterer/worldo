@@ -41,21 +41,37 @@ current_darkness = array_get(current_phase,2) - ((array_get(current_phase,2) - a
 ++tick;
 #endregion
 
+#region Time scaling
 if keyboard_check_pressed(vk_pageup) {
 	if timescale < 5 {
 		timescale += .5
 		var ts = timescale
-		with (Movable) {
+		with (Worker) {
 			path_speed = base_path_speed * ts	
 		}
 	}
 }
+
 if keyboard_check_pressed(vk_pagedown) {
 	if timescale > 0 {
 		timescale -= .5
 		var ts = timescale
-		with (Movable) {
-			path_speed = base_path_speed * ts	
+		with (Worker) {
+			path_speed = base_path_speed * ts
+		}
+	}
+}
+#endregion
+
+if keyboard_check_pressed(ord("R")) {
+	with (Person) {
+		if selected {
+			if ds_priority_find_max(tasks) != "WAR" {
+				queue_clear()
+				queue_add("WAR")
+			} else {
+				queue_clear()
+			}
 		}
 	}
 }
