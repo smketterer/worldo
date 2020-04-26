@@ -3,11 +3,11 @@ event_inherited()
 // properties base
 hp = 50
 max_hp = 50
-move_speed = random(10)
+move_speed = round(random(10))
 
 // skills base
-chopping_skill = 5
-cutting_skill = 5
+chopping_skill = 2 + round(random(5))
+cutting_skill = 2 + round(random(5))
 
 // needs base
 satiety = 100

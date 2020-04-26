@@ -54,9 +54,9 @@ switch (ds_priority_find_max(tasks)) {
 				queue_pop()
 			}
 		} else {
-			// Next to tree, cut it.
+			// Next to resource, cut it.
 			if path_position == 1 {
-				instance_destroy(resource)
+				resource.hp -= ((chopping_skill / 10) * Manager.timescale)
 			}
 		}
 		break
