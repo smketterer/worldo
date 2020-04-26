@@ -1,13 +1,14 @@
 str_selected = ""
 size = ds_list_size(selected)
 for (var i=0; i<size; i++) {
-	if i > 0 {
-		str_selected += ","
-	}
 	if (variable_instance_exists(ds_list_find_value(selected, i), "name")) {
 		str_selected += string(ds_list_find_value(selected, i).nickname)
-	} else {
+		str_selected += ","
+	} else if instance_exists(ds_list_find_value(selected, i)) {
 		str_selected += string(object_get_name(ds_list_find_value(selected, i).object_index))
+		str_selected += ","
+	} else {
+		continue
 	}
 }
 draw_text(5,4,"[" + str_selected + "]")
@@ -20,13 +21,6 @@ draw_text(5,28,"zoom: " + string((1 - Camera.zoom_level)*10))
 draw_text(5,40,"timescale: " + string(timescale))
 draw_text(5,52,string(floor(hours % 24))+":"+string(round(minutes % 60)))
 draw_text(5,64,string(day)+" day of "+string(season)+", Year "+string(year))
-
-for (var i=0; i<size; i++) {
-	if i > 0 {
-		str_selected += ","
-	}
-	str_selected += string(ds_list_find_value(selected, i).id)
-}
 
 var pix = 0;
 with (Person) {

@@ -1,7 +1,9 @@
 if not keyboard_check(vk_control) {
 	for (var i=0; i<ds_list_size(selected); i++) {
-		instance = ds_list_find_value(selected, i)
-		instance.selected = false
+		if instance_exists(ds_list_find_value(selected, i)) {
+			instance = ds_list_find_value(selected, i)
+			instance.selected = false
+		}
 	}
 	ds_list_destroy(selected)
 	selected = ds_list_create()
