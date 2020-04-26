@@ -11,8 +11,8 @@ with (object) {
 }
 
 if ds_list_size(objects) > 0 {
-	var min_distance = 100000;
-	var min_distance_object;
+	var min_distance = 100000
+	var min_distance_object
 	for (var i=0; i<ds_list_size(objects); i++) {
 		var instance = ds_list_find_value(objects, i)
 		var distance = distance_to_point(instance.x, instance.y)
