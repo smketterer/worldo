@@ -10,6 +10,8 @@ switch (task) {
 		return "Chopping wood"
 	case "CUT":
 		return "Foraging"
+	case "HAUL":
+		return "Hauling items to stockpile"
 	default:
 		return "Idle"
 }

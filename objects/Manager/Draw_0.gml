@@ -1,9 +1,3 @@
-if keyboard_check(vk_space) {
-	draw_set_alpha(.1)
-	mp_grid_draw(grid)
-	draw_set_alpha(1)
-}
-
 #region Y-sorting
 var y_order = ds_grid_create(2,1)
 var count = instance_number(Entity)

@@ -61,7 +61,24 @@ if keyboard_check_pressed(vk_pagedown) {
 		}
 	}
 }
+
+if keyboard_check_pressed(vk_space) {
+	if timescale != 0 {
+		prev_timescale = timescale
+		timescale = 0
+	} else {
+		timescale = prev_timescale
+	}
+	var ts = timescale
+	with (Worker) {
+		path_speed = base_path_speed * ts
+	}
+}
 #endregion
+
+if keyboard_check_pressed(vk_escape) {
+	game_end();	
+}
 
 if keyboard_check_pressed(ord("R")) {
 	with (Person) {

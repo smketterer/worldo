@@ -8,6 +8,7 @@ mp_grid_add_instances(Manager.grid, PassThrough, false)
 // window_set_fullscreen(true)
 draw_set_font(font0)
 
+prev_timescale = 0
 timescale = 1
 
 #region Lighting init

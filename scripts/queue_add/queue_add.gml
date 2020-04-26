@@ -10,10 +10,4 @@ if task == "WAR" {
 	ds_priority_add(tasks, task, 100)
 }
 
-var instance = self
-with Resource {
-	if claimed_by == instance {
-		claimed = false
-		claimed_by = noone
-	}
-}
+reset_resource_claims()
