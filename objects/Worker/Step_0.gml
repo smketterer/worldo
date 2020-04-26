@@ -14,6 +14,7 @@ switch (ds_priority_find_max(tasks)) {
 		}
 		if !resource {
 			// No resource, find closest unclaimed tree
+			refresh_grid()
 			var closest = get_closest_unclaimed_resource(Tree)
 			if closest {
 				move_to(closest.x, closest.y)
@@ -26,8 +27,7 @@ switch (ds_priority_find_max(tasks)) {
 		} else {
 			// Next to tree, cut it.
 			if path_position == 1 {
-				instance_destroy(resource)
-				refresh_grid()
+				resource.hp -= ((chopping_skill / 10) * Manager.timescale)
 			}
 		}
 		break
@@ -43,6 +43,7 @@ switch (ds_priority_find_max(tasks)) {
 		}
 		if !resource {
 			// No resource, find closest unclaimed tree
+			refresh_grid()
 			var closest = get_closest_unclaimed_resource(Bush)
 			if closest {
 				move_to(closest.x, closest.y)
@@ -56,7 +57,6 @@ switch (ds_priority_find_max(tasks)) {
 			// Next to tree, cut it.
 			if path_position == 1 {
 				instance_destroy(resource)
-				refresh_grid()
 			}
 		}
 		break

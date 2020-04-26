@@ -5,9 +5,9 @@ for (var i=0; i<size; i++) {
 		str_selected += ","
 	}
 	if (variable_instance_exists(ds_list_find_value(selected, i), "name")) {
-		str_selected += string(ds_list_find_value(selected, i).name)
+		str_selected += string(ds_list_find_value(selected, i).nickname)
 	} else {
-		str_selected += string(ds_list_find_value(selected, i).id)
+		str_selected += string(object_get_name(ds_list_find_value(selected, i).object_index))
 	}
 }
 draw_text(5,4,"[" + str_selected + "]")

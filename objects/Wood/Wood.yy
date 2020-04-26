@@ -1,19 +1,10 @@
 {
-    "id": "9e4b7540-1606-4ac3-8b19-db0af1af4824",
+    "id": "367593fc-5a9d-4deb-bb77-3efcc9212a84",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "Tree",
+    "name": "Wood",
     "eventList": [
-        {
-            "id": "04c3dc15-ad9b-4b0f-a8ea-8b50cb2a3509",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 1,
-            "m_owner": "9e4b7540-1606-4ac3-8b19-db0af1af4824"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
@@ -33,6 +24,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "a4b65753-7bdd-4451-9aa1-d01a8ade809a",
+    "spriteId": "7c22fca0-5ed8-46a7-b95a-c6bf0e993db9",
     "visible": true
 }

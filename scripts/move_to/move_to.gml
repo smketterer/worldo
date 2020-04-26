@@ -7,9 +7,17 @@ var cs = Manager.cellsize
 mp_grid_add_instances(grid, Block, false)
 mp_grid_add_instances(grid, PassThrough, false)
 var prev = ds_list_create()
+var current_instance = self
+
 with (Worker) {
 	mp_grid_add_cell(grid, floor(x/cs), floor(y/cs))
 	ds_list_add(prev, [floor(x/cs),floor(y/cs)])
+	
+	// Add endpoints of any currently moving instance
+	if path and path_position < 1 and current_instance != self {
+		mp_grid_add_cell(Manager.grid, path_get_point_x(path, path_get_number(path)-1)/cs, path_get_point_y(path, path_get_number(path)-1)/cs)
+		ds_list_add(prev, [path_get_point_x(path, path_get_number(path)-1)/cs,path_get_point_y(path, path_get_number(path)-1)/cs])
+	}
 }
 	
 // Remove current entity instance from grid
