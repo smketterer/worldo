@@ -30,6 +30,6 @@ with (Person) {
 	draw_sprite(hands_sprite_index, 0, 13, offset)
 	draw_text(28, offset - 18, name)
 	draw_text(28, offset - 6, string(get_task_label(ds_priority_find_max(tasks))) + " | " + string(hp) + "/" + string(max_hp))
-	draw_text(28, offset + 6, hauling)
+	// draw_text(28, offset + 6, hauling)
 	pix++
 }

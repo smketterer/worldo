@@ -10,7 +10,7 @@ with Resource {
 }
 
 if !resource and hauling == noone {
-	// No resource, find closest unclaimed bush
+	// No resource, find closest unclaimed storable item
 	refresh_grid()
 	var closest = get_closest_unclaimed_resource(Storable, true)
 	if closest {
@@ -25,10 +25,10 @@ if !resource and hauling == noone {
 	// Next to resource, carry it.
 	if path_position == 1 {
 		resource.lifted -= ((hauling_skill / 10) * Manager.timescale)
-		
 		if resource.lifted <= 0 {
 			var closest = get_closest_unclaimed_resource(Zone)
 			if closest {
+				hauling_to = [closest.x, closest.y]
 				move_to(closest.x, closest.y)
 				closest.claimed = true
 				closest.claimed_by = self
@@ -45,6 +45,8 @@ if !resource and hauling == noone {
 	
 	if path_position == 1 {
 		resource.stored = true
+		hauling.x = hauling_to[0]
+		hauling.y = hauling_to[1]
 		reset_resource_claims()
 	}
 }

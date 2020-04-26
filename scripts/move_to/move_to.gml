@@ -6,6 +6,12 @@ var cs = Manager.cellsize
 // Add all blocks and moveable characters' previous positions to grid
 mp_grid_add_instances(grid, Block, false)
 mp_grid_add_instances(grid, PassThrough, false)
+
+// Clear storable zones
+with (Zone) {
+	mp_grid_clear_cell(grid, floor(x/cs), floor(y/cs))
+}
+
 var prev = ds_list_create()
 var current_instance = self
 
@@ -32,7 +38,7 @@ var got_path = mp_grid_path(grid, path, x, y, goal_cell_x*cs, goal_cell_y*cs, tr
 if mp_grid_get_cell(grid, goal_cell_x, goal_cell_y) == 0 and got_path {
 	// Mark the end position as blocked
 	mp_grid_add_cell(grid, goal_cell_x, goal_cell_y)
-		
+	
 	// Round the path values and start
 	path = round_path(path)
 	path_start(path, base_path_speed*Manager.timescale, 0, true)

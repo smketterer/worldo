@@ -12,3 +12,7 @@ if lifted <= 0 {
 		claimed_by.hauling = self
 	}
 }
+
+if !place_meeting(x,y,Zone) {
+	stored = false	
+}

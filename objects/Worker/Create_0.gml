@@ -22,3 +22,4 @@ base_path_speed = 1 + (move_speed / 8)
 // ai base
 tasks = ds_priority_create()
 hauling = noone
+hauling_to = undefined

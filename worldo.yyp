@@ -1303,6 +1303,14 @@
             }
         },
         {
+            "Key": "f6e468ec-5c97-41ca-a549-882d394dddca",
+            "Value": {
+                "id": "0a2480bc-59f3-4510-8b68-8c5fdc3689df",
+                "resourcePath": "sprites\\stored0\\stored0.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "f71d0eeb-a5e9-4751-948f-5ad50bd4935c",
             "Value": {
                 "id": "52b64faa-c8c3-4a2d-8382-776a7cafd546",

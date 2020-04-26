@@ -11,7 +11,7 @@ switch (task) {
 	case "CUT":
 		return "Foraging"
 	case "HAUL":
-		return "Hauling items to stockpile"
+		return "Hauling items"
 	default:
 		return "Idle"
 }
