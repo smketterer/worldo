@@ -1,4 +1,4 @@
-if !keyboard_check(vk_space) {
+if keyboard_check(vk_space) {
 	draw_set_alpha(.1)
 	mp_grid_draw(grid)
 	draw_set_alpha(1)

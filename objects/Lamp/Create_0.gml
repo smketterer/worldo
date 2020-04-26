@@ -1,7 +1,7 @@
 event_inherited()
 
 // b g r a
-var color = choose($FF0000FF, $FF00FF00, $FFFFFF00) // , $FFFFFFFF
+var color = choose($FF0000FF, $FF00FF00, $FFFFFF00, $FFFFFFFF) // , $FFFFFFFF
 
 light = instance_create_layer(x+8,y+8,layer,Light)
 light.Light_Intensity = 1.75
