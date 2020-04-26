@@ -8,12 +8,13 @@ move_speed = round(random(10))
 // skills base
 chopping_skill = 2 + round(random(5))
 cutting_skill = 2 + round(random(5))
+constructing_skill = 2 + round(random(5))
 
 // needs base
 satiety = 100
+social = 100
 
-// movable base
-movable = true
+// movable (worker) base
 path = path_add()
 base_path_speed = 1 + (move_speed / 8)
 
