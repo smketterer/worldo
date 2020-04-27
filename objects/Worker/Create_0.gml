@@ -10,6 +10,7 @@ chopping_skill = 2 + round(random(5))
 cutting_skill = 2 + round(random(5))
 constructing_skill = 2 + round(random(5))
 hauling_skill = 2 + round(random(5))
+shooting_skill = 2 + round(random(5))
 
 // needs base
 satiety = 100

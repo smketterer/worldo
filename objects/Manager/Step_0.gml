@@ -49,6 +49,9 @@ if keyboard_check_pressed(vk_pageup) {
 		with (Worker) {
 			path_speed = base_path_speed * ts	
 		}
+		with (Bullet) {
+			speed = base_bullet_speed * ts	
+		}
 	}
 }
 
@@ -58,6 +61,9 @@ if keyboard_check_pressed(vk_pagedown) {
 		var ts = timescale
 		with (Worker) {
 			path_speed = base_path_speed * ts
+		}
+		with (Bullet) {
+			speed = base_bullet_speed * ts	
 		}
 	}
 }
