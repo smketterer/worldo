@@ -79,11 +79,14 @@ if keyboard_check_pressed(vk_space) {
 	with (Worker) {
 		path_speed = base_path_speed * ts
 	}
+	with (Bullet) {
+		speed = base_bullet_speed * ts	
+	}
 }
 #endregion
 
 if keyboard_check_pressed(vk_escape) {
-	game_end();	
+	game_end();
 }
 
 if keyboard_check_pressed(ord("R")) {

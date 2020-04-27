@@ -20,9 +20,10 @@ if path_get_number(path) > 0 and path_position < 1 and Manager.timescale > 0 {
 
 firing = mouse_check_button_pressed(mb_left)
 if firing {
-	var bullet = instance_create_layer(barrel_x,barrel_y,layer,Bullet)	
+	var bullet = instance_create_layer(barrel_x,barrel_y,"Overlays",Bullet)	
 	var shot_variance = 35 / shooting_skill
 	bullet.direction = direction + (random(shot_variance) - (shot_variance / 2))
+	bullet.zdir = (random(shot_variance) - (shot_variance / 2))/2
 	bullet.speed = bullet.base_bullet_speed * Manager.timescale
 	bullet.creator = self
 }

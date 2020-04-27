@@ -623,6 +623,14 @@
             }
         },
         {
+            "Key": "6b60bede-c957-4a36-8bf2-b8571d2da42a",
+            "Value": {
+                "id": "1c542e0f-08c8-490b-af67-2b4ed88a8e0a",
+                "resourcePath": "sprites\\bulletanim0\\bulletanim0.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6b92a3db-c728-48dd-9ebf-d40842bfe3b4",
             "Value": {
                 "id": "a8f00dfb-576f-4522-b41f-4efbd2818f88",
@@ -863,6 +871,14 @@
             }
         },
         {
+            "Key": "98258a14-0bd7-4b41-8124-93d9a1e81722",
+            "Value": {
+                "id": "b33a2a62-d007-4e8b-80a0-04e956dddb50",
+                "resourcePath": "views\\98258a14-0bd7-4b41-8124-93d9a1e81722.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "9ac5d23d-7f95-4cba-8f3e-27c53810f880",
             "Value": {
                 "id": "c8a51792-ce5b-4d09-9c68-dbc67aea135d",
@@ -988,6 +1004,14 @@
                 "id": "ac7ddbf1-ac8b-4fe1-bafe-18e285fcc11a",
                 "resourcePath": "scripts\\composite_shadow_map\\composite_shadow_map.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "ac1a37b6-2a7a-43b0-9d39-cc19ec9f2c36",
+            "Value": {
+                "id": "7fc2bfba-a559-41ff-ac34-445308a441b9",
+                "resourcePath": "objects\\bulletHitFloor\\bulletHitFloor.yy",
+                "resourceType": "GMObject"
             }
         },
         {

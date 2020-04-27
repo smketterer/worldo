@@ -37,7 +37,7 @@ last_name = get_name("ln")
 name = first_name + " '" + nickname + "' " + last_name
 
 rand = random(1)
-if rand > .5 {
+if rand > .95 {
 	hands_sprite_index = handsNone
 } else {
 	hands_sprite_index = handsShotgun
