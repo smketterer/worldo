@@ -5,8 +5,8 @@ var color = choose($FF0000FF, $FF00FF00, $FFFFFF00, $FFFFFFFF) // , $FFFFFFFF
 
 light = instance_create_layer(x+8,y+8,layer,Light)
 light.Light_Intensity = 1.75
-light.Light_Range = 256
-light.Light_Shadow_Length = 256
+light.Light_Range = 96 * 2
+light.Light_Shadow_Length = 96 * 2
 light.Light_Color = color
 light.should_initialize = true
 

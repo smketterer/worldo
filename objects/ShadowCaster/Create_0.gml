@@ -1,7 +1,8 @@
 event_inherited()
 
 // Child objects set this
-polygon = undefined;
+polygon = polygon_from_instance(id);
+shadow_length = sprite_height * 6;
 
 // Default shadow caster flags
 flags = eShadowCasterFlags.None;
@@ -21,5 +22,3 @@ outside_active_camera = false;
 // The last camera this shadow caster was compared against,
 // as the view array
 last_camera = undefined;
-
-polygon = polygon_from_instance(id)

@@ -52,7 +52,7 @@ if mp_grid_get_cell(grid, goal_cell_x, goal_cell_y) == 0 and got_path {
 	// Did not successfully return a path, so move close. Loop through preferred postions and check for paths
 	var attempt_areas = [[0,-1],[-1,0],[1,0],[0,1],[-1,-1],[1,1],[1,-1],[-1,1]]
 	var min_distance = 100000
-	var min_distance_path
+	var min_distance_path = path_add()
 	
 	for (var i=0; i<8; i++) {
 		var rel_x = array_get(attempt_areas[i], 0)

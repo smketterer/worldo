@@ -88,7 +88,7 @@ global.worldActiveShadowCasters = 0;
 #macro __WORLD_SHADOW_MAP_SHADER sh_shadow_map
 
 // The object that is responsible for rendering the lighting system
-#macro __LIGHT_RENDERER obj_light_renderer
+#macro __LIGHT_RENDERER Manager
 
 //
 //	Enums

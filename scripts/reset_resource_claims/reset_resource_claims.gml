@@ -6,6 +6,11 @@ with Resource {
 	}
 }
 with hauling {
-	layer_add_instance(initial_layer, self)
+	var newinst = instance_copy(false)
+	layer_add_instance(initial_layer, newinst)
+	newinst.polygon = polygon_from_instance(newinst.id)
+	newinst.shadow_length = 0
+	newinst.selected = false
+	instance_destroy()
 }
 hauling = noone

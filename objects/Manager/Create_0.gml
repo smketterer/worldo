@@ -18,7 +18,7 @@ dirty = false;
 #endregion
 
 #region Day and night cycle
-seconds = 60 * 60 * 18
+seconds = 60 * 60 * 12
 minutes = 0
 hours = 0
 

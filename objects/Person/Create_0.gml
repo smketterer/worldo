@@ -5,6 +5,7 @@ dir = 1
 ydir = 0
 move_length = 0
 current_xscale = 1
+current_handsoffset = 0
 
 rand = random(1)
 if rand > .8 {
@@ -35,5 +36,5 @@ rand = random(1)
 if rand > .5 {
 	hands_sprite_index = handsNone
 } else {
-	hands_sprite_index = handsRifle
+	hands_sprite_index = handsShotgun
 }
