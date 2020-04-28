@@ -18,29 +18,29 @@ draw_set_alpha(1)
 
 current_xscale = lerp(current_xscale, dir, .15)
 
-var mouse_dir = direction
+var visual_aim_dir = aim_dir
 var offset = firing * -8
 current_handsoffset = lerp(current_handsoffset, offset, .25)
 
 var gun_xscale = 1
 var gun_yscale = 1
-if mouse_dir > 90 and mouse_dir <= 270 {
+if visual_aim_dir > 90 and visual_aim_dir <= 270 {
 	gun_xscale = -1
-	mouse_dir+=180
+	visual_aim_dir+=180
 }
 if current_xscale < 0 {
-	mouse_dir-=180
+	visual_aim_dir-=180
 	gun_yscale = -1
 }
-var kickback_x = lengthdir_x(current_handsoffset*gun_xscale*gun_yscale,mouse_dir)
-var kickback_y = lengthdir_y(current_handsoffset*gun_xscale*gun_yscale,mouse_dir)
+var kickback_x = lengthdir_x(current_handsoffset*gun_xscale*gun_yscale,visual_aim_dir)
+var kickback_y = lengthdir_y(current_handsoffset*gun_xscale*gun_yscale,visual_aim_dir)
 
 if ydir == 1 {
 	if hauling == noone {
 		if hands_sprite_index = handsShotgun {
-			draw_sprite_ext(hands_sprite_index, image_index, x+8+kickback_x, draw_y+5+kickback_y, current_xscale*gun_xscale, image_yscale*gun_yscale, mouse_dir, image_blend, image_alpha)
-			barrel_x = x+8-(gun_xscale*2)+kickback_x
-			barrel_y = draw_y+3+kickback_y
+			draw_sprite_ext(hands_sprite_index, image_index, x+8+kickback_x, draw_y+5+kickback_y, current_xscale*gun_xscale, image_yscale*gun_yscale, visual_aim_dir, image_blend, image_alpha)
+			barrel_x = x+8-(gun_xscale*2)
+			barrel_y = draw_y+3
 		} else {
 			draw_sprite_ext(hands_sprite_index, image_index, x+8, draw_y+8, current_xscale, image_yscale, image_angle, image_blend, image_alpha)
 		}
@@ -53,9 +53,9 @@ draw_sprite_ext(sprite_index, ydir, x+8, draw_y+8, current_xscale, image_yscale,
 if ydir == 0 {
 	if hauling == noone {
 		if hands_sprite_index = handsShotgun {
-			draw_sprite_ext(hands_sprite_index, image_index, x+8-(gun_xscale)+kickback_x, draw_y+8+kickback_y, current_xscale*gun_xscale, image_yscale*gun_yscale, mouse_dir, image_blend, image_alpha)
-			barrel_x = x+8+(gun_xscale*2)+kickback_x
-			barrel_y = draw_y+6+kickback_y
+			draw_sprite_ext(hands_sprite_index, image_index, x+8-(gun_xscale)+kickback_x, draw_y+8+kickback_y, current_xscale*gun_xscale, image_yscale*gun_yscale, visual_aim_dir, image_blend, image_alpha)
+			barrel_x = x+8+(gun_xscale*2)
+			barrel_y = draw_y+6
 		} else {
 			draw_sprite_ext(hands_sprite_index, image_index, x+8, draw_y+8, current_xscale, image_yscale, image_angle, image_blend, image_alpha)
 		}
@@ -64,8 +64,8 @@ if ydir == 0 {
 	}
 }
 
-barrel_x += lengthdir_x(13,direction)
-barrel_y += lengthdir_y(13,direction)
+barrel_x += lengthdir_x(13,aim_dir)
+barrel_y += lengthdir_y(13,aim_dir)
 
 draw_set_color(c_red)
 draw_point(barrel_x,barrel_y)

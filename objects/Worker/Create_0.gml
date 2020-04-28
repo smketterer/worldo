@@ -24,3 +24,9 @@ base_path_speed = 1 + (move_speed / 8)
 tasks = ds_priority_create()
 hauling = noone
 hauling_to = undefined
+
+// combat base
+aiming = false
+target = noone
+attack_cooldown = 30
+attack_counter = attack_cooldown

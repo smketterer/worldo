@@ -4,6 +4,8 @@
 var task = argument0
 
 switch (task) {
+	case "DEFEND":
+		return "Defending the base"
 	case "WAR":
 		return "Drafted"
 	case "CHOP":

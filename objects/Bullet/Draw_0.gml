@@ -7,16 +7,15 @@ var count = 0
 z -= lengthdir_y(speed,zdir)
 
 while (point_distance(x,y,xx,yy) >= 1) {
-	if !place_empty(xx,yy,Entity,Block) {
-		if other != creator {
-			with other {
-				if variable_instance_exists(id,"hp") {
-					hp -= 10
-				}
+	var meeting = instance_position(xx,yy,Entity)
+	if meeting and meeting != creator {
+		with meeting {
+			if variable_instance_exists(id,"hp") {
+				hp -= 10
 			}
-			instance_destroy()
-			return
 		}
+		instance_destroy()
+		return
 	}
 	if (z <= 0) {
 		instance_create_layer(x,y,layer,bulletHitFloor)

@@ -3,6 +3,7 @@ event_inherited()
 draw_y = y
 dir = 1
 ydir = 0
+aim_dir = direction
 move_length = 0
 
 current_xscale = 1
@@ -10,6 +11,10 @@ current_handsoffset = 0
 firing = false
 barrel_x = x
 barrel_y = y
+
+controllable = true
+
+faction = "player"
 
 rand = random(1)
 if rand > .8 {

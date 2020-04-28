@@ -11,6 +11,10 @@ switch (ds_priority_find_max(tasks)) {
 	case "HAUL":
 		haul_behaviour()
 		break
+	case "WAR":
+		break
+	case "DEFEND":
+		defend_behaviour()
 	default:
 		break
 }
