@@ -37,8 +37,9 @@ var kickback_y = lengthdir_y(current_handsoffset*gun_xscale*gun_yscale,visual_ai
 
 if ydir == 1 {
 	if hauling == noone {
-		if hands_sprite_index = handsShotgun {
-			draw_sprite_ext(hands_sprite_index, image_index, x+8+kickback_x, draw_y+5+kickback_y, current_xscale*gun_xscale, image_yscale*gun_yscale, visual_aim_dir, image_blend, image_alpha)
+		// check if has weapon
+		if ds_list_find_index(equip,Shotgun) >= 0 {
+			draw_sprite_ext(handsShotgun, image_index, x+8+kickback_x, draw_y+5+kickback_y, current_xscale*gun_xscale, image_yscale*gun_yscale, visual_aim_dir, image_blend, image_alpha)
 			barrel_x = x+8-(gun_xscale*2)
 			barrel_y = draw_y+3
 		} else {
@@ -52,8 +53,9 @@ draw_sprite_ext(shadow0, image_index, x+8, y+8, image_xscale, image_yscale, imag
 draw_sprite_ext(sprite_index, ydir, x+8, draw_y+8, current_xscale, image_yscale, image_angle, image_blend, image_alpha)
 if ydir == 0 {
 	if hauling == noone {
-		if hands_sprite_index = handsShotgun {
-			draw_sprite_ext(hands_sprite_index, image_index, x+8-(gun_xscale)+kickback_x, draw_y+8+kickback_y, current_xscale*gun_xscale, image_yscale*gun_yscale, visual_aim_dir, image_blend, image_alpha)
+		// check if has weapon
+		if ds_list_find_index(equip,Shotgun) >= 0 {
+			draw_sprite_ext(handsShotgun, image_index, x+8-(gun_xscale)+kickback_x, draw_y+8+kickback_y, current_xscale*gun_xscale, image_yscale*gun_yscale, visual_aim_dir, image_blend, image_alpha)
 			barrel_x = x+8+(gun_xscale*2)
 			barrel_y = draw_y+6
 		} else {

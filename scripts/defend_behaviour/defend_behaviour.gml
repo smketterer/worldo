@@ -1,6 +1,3 @@
-// var instance = self
-// var resource = noone
-
 if !target or !instance_exists(target) {
 	// No target, find closest enemy
 	refresh_grid()
@@ -37,9 +34,4 @@ if !target or !instance_exists(target) {
 			attack_counter = attack_cooldown
 		}
 	}
-	
-	// Target moved away, recalculate path
-	// if aiming and point_distance(x,y,target.x,target.y) > 256 {
-	//	move_to(target.x, target.y)
-	// }
 }
