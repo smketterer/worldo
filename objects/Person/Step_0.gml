@@ -7,37 +7,32 @@ if !aiming {
 if path_get_number(path) > 0 and path_position < 1 and Manager.timescale > 0 {
 	moving = true
 	move_length += 1
-	
-	if aiming {
-		if (x < target.x) {
-			dir = 1
-		} else if (x >= target.x) {
-			dir = -1
-		}
-		if (y <= target.y) {
-			ydir = 0
-		} else if (y > target.y) {
-			ydir = 1
-		}
+	if (direction < 90 or direction > 270) {
+		dir = 1
 	} else {
-		if (direction < 90 or direction > 270) {
-			dir = 1
-		} else {
-			dir = -1
-		}
-		if (direction > 0 and direction < 180) {
-			ydir = 1
-		} else {
-			ydir = 0
-		}
+		dir = -1
 	}
-
+	if (direction > 0 and direction < 180) {
+		ydir = 1
+	} else {
+		ydir = 0
+	}
 } else {
 	moving = false
 	move_length = 0
 }
 
-if aiming {
+if aiming and target and instance_exists(target) {
+	if (x < target.x) {
+		dir = 1
+	} else if (x >= target.x) {
+		dir = -1
+	}
+	if (y <= target.y) {
+		ydir = 0
+	} else if (y > target.y) {
+		ydir = 1
+	}
 	aim_dir = point_direction(x,y,target.x,target.y)
 }
 

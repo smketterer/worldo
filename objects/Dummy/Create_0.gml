@@ -9,3 +9,6 @@ sprite_index = furniture1
 hands_sprite_index = furniture1
 
 faction = "enemy"
+
+hp = 100
+max_hp = 100

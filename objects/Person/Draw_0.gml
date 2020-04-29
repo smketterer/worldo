@@ -24,7 +24,7 @@ current_handsoffset = lerp(current_handsoffset, offset, .25)
 
 var gun_xscale = 1
 var gun_yscale = 1
-if visual_aim_dir > 90 and visual_aim_dir <= 270 {
+if visual_aim_dir >= 90 and visual_aim_dir <= 270 {
 	gun_xscale = -1
 	visual_aim_dir+=180
 }
@@ -67,6 +67,7 @@ if ydir == 0 {
 barrel_x += lengthdir_x(13,aim_dir)
 barrel_y += lengthdir_y(13,aim_dir)
 
-draw_set_color(c_red)
-draw_point(barrel_x,barrel_y)
-draw_set_color(c_white)
+// debug barrel pos
+// draw_set_color(c_red)
+// draw_point(barrel_x,barrel_y)
+// draw_set_color(c_white)

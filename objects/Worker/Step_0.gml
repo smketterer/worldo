@@ -18,3 +18,7 @@ switch (ds_priority_find_max(tasks)) {
 	default:
 		break
 }
+
+if hp <= 0 {
+	instance_destroy()
+}

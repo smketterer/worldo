@@ -1,26 +1,33 @@
 // var instance = self
 // var resource = noone
 
-if !target {
+if !target or !instance_exists(target) {
 	// No target, find closest enemy
 	refresh_grid()
 	var closest = get_closest_enemy()
 	target = closest
 	if closest {
-		move_to(closest.x, closest.y)
+		var closest_direction = point_direction(x,y,closest.x,closest.y)
+		var closest_distance = point_distance(x,y,closest.x,closest.y)
+		var target_location_x = lengthdir_x(closest_distance - 128, closest_direction)
+		var target_location_y = lengthdir_y(closest_distance - 128, closest_direction)
+		move_to(x+target_location_x, y+target_location_y)
 	} else {
 		// No enemies left, cancel
 		queue_pop()
+		aiming = false
+		target = noone
+		if dir == 1 {
+			direction = 0
+			aim_dir = direction
+		} else {
+			direction = 180
+			aim_dir = direction
+		}
 	}
 } else {
 	// Check whether you're close enough to fire.
-	if path_get_number(path) > 0 {
-		if !collision_line(x,y,target.x,target.y,Block,true,true) and point_distance(x,y,target.x,target.y) < 320 {
-			// Can fire. Stop ASAP.
-			path_end()
-			path = path_add()
-		}
-	} else {
+	if path_position == 1 {
 		aiming = true
 		if attack_counter > 0 {
 			firing = false
@@ -31,7 +38,8 @@ if !target {
 		}
 	}
 	
-	if aiming and point_distance(x,y,target.x,target.y) > 320 {
-		// recalculate path
-	}
+	// Target moved away, recalculate path
+	// if aiming and point_distance(x,y,target.x,target.y) > 256 {
+	//	move_to(target.x, target.y)
+	// }
 }
