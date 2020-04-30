@@ -15,6 +15,9 @@ with (Zone) {
 var prev = ds_list_create()
 var current_instance = self
 
+path = path_add()
+path_set_closed(path, false)
+
 with (Worker) {
 	mp_grid_add_cell(grid, floor(x/cs), floor(y/cs))
 	ds_list_add(prev, [floor(x/cs),floor(y/cs)])
@@ -59,7 +62,10 @@ if mp_grid_get_cell(grid, goal_cell_x, goal_cell_y) == 0 and got_path {
 		var rel_y = array_get(attempt_areas[i], 1)
 		var new_goal_cell_x = goal_cell_x+rel_x
 		var new_goal_cell_y = goal_cell_y+rel_y
+		
 		var got_path = path_add()
+		path = got_path
+		path_set_closed(path, false)
 		
 		// If place is free, attempt to get a valid path
 		if mp_grid_get_cell(grid, new_goal_cell_x, new_goal_cell_y) == 0 {
@@ -79,6 +85,7 @@ if mp_grid_get_cell(grid, goal_cell_x, goal_cell_y) == 0 and got_path {
 					
 		// Round the path values and start
 		path = min_distance_path
+		path_set_closed(path, false)
 		path_start(path, base_path_speed*Manager.timescale, 0, true)
 				
 		// Clean up previous positions
@@ -86,5 +93,15 @@ if mp_grid_get_cell(grid, goal_cell_x, goal_cell_y) == 0 and got_path {
 			var coords = ds_list_find_value(prev,j)
 			mp_grid_clear_cell(grid, coords[0], coords[1])
 		}
+	}
+}
+
+// For debugging
+if Manager.debug {
+	for (var pix=0; pix<path_get_number(path); pix++) {
+		var marker = instance_create_layer(path_get_point_x(path,pix),path_get_point_y(path,pix),layer,Marker)
+		marker.image_index = (pix % 2)
+		marker.image_speed = 0
+		marker.instance = self                           
 	}
 }

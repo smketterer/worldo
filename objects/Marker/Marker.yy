@@ -1,28 +1,18 @@
 {
-    "id": "ac1a37b6-2a7a-43b0-9d39-cc19ec9f2c36",
+    "id": "542060b8-bdeb-47ab-9551-88ad1b0f8a0c",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "BulletHitFloor",
+    "name": "Marker",
     "eventList": [
         {
-            "id": "a44562f2-8f2f-4387-b614-327e621028d3",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 7,
-            "eventtype": 7,
-            "m_owner": "ac1a37b6-2a7a-43b0-9d39-cc19ec9f2c36"
-        },
-        {
-            "id": "3f17bcf4-9699-44c2-83b1-44208695d3a1",
+            "id": "f23ff761-6c71-499a-9e71-19a7847b3d6a",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 8,
-            "m_owner": "ac1a37b6-2a7a-43b0-9d39-cc19ec9f2c36"
+            "m_owner": "542060b8-bdeb-47ab-9551-88ad1b0f8a0c"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -43,6 +33,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "6b60bede-c957-4a36-8bf2-b8571d2da42a",
+    "spriteId": "5656262d-0684-43c2-9bcc-c58a12bc8a1a",
     "visible": true
 }

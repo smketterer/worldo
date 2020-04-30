@@ -7,7 +7,7 @@ mp_grid_add_instances(Manager.grid, PassThrough, false)
 
 // window_set_fullscreen(true)
 draw_set_font(font0)
-
+debug = false
 prev_timescale = 0
 timescale = 1
 
@@ -18,7 +18,7 @@ dirty = false;
 #endregion
 
 #region Day and night cycle
-seconds = 60 * 60 * 12
+seconds = 60 * 60 * 22
 minutes = 0
 hours = 0
 

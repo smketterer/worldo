@@ -511,6 +511,22 @@
             }
         },
         {
+            "Key": "542060b8-bdeb-47ab-9551-88ad1b0f8a0c",
+            "Value": {
+                "id": "adacb2e7-97eb-4ac4-86a2-ad21dcff2d5f",
+                "resourcePath": "objects\\Marker\\Marker.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "5656262d-0684-43c2-9bcc-c58a12bc8a1a",
+            "Value": {
+                "id": "b36bd126-6daa-44e5-9a7e-5eb6e7a63141",
+                "resourcePath": "sprites\\marker0\\marker0.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "57717bd4-6d96-4b7a-8779-344e572ffcb7",
             "Value": {
                 "id": "134c9727-49c2-4260-96de-a9c711742b53",
@@ -1042,7 +1058,7 @@
             "Key": "ac1a37b6-2a7a-43b0-9d39-cc19ec9f2c36",
             "Value": {
                 "id": "7fc2bfba-a559-41ff-ac34-445308a441b9",
-                "resourcePath": "objects\\bulletHitFloor\\bulletHitFloor.yy",
+                "resourcePath": "objects\\BulletHitFloor\\BulletHitFloor.yy",
                 "resourceType": "GMObject"
             }
         },

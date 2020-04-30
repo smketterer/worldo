@@ -18,7 +18,7 @@ while (point_distance(x,y,xx,yy) >= 1) {
 		return
 	}
 	if (z <= 0) {
-		instance_create_layer(x,y,layer,bulletHitFloor)
+		instance_create_layer(x,y,layer,BulletHitFloor)
 		instance_destroy()
 	}
 	var factor = ((count-(speed/4))/speed)

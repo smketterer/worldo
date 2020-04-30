@@ -1,7 +1,5 @@
 event_inherited()
 
-controllable = false
-
 // Unset generated stuff
 name = "Dummy"
 nickname = "Dummy"
@@ -13,4 +11,4 @@ faction = "enemy"
 hp = 100
 max_hp = 100
 
-equip = ds_list_create()
+// equip = ds_list_create()

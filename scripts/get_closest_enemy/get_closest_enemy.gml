@@ -1,7 +1,8 @@
 var enemy_list = ds_list_create()
+var my_faction = faction
 
 with Person {
-	if faction == "enemy" {
+	if faction != my_faction {
 		ds_list_add(enemy_list, self)
 	}
 }
