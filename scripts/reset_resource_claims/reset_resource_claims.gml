@@ -14,3 +14,4 @@ with hauling {
 	instance_destroy()
 }
 hauling = noone
+path = path_add()

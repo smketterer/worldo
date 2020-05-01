@@ -101,7 +101,6 @@ if Manager.debug {
 	for (var pix=0; pix<path_get_number(path); pix++) {
 		var marker = instance_create_layer(path_get_point_x(path,pix),path_get_point_y(path,pix),layer,Marker)
 		marker.image_index = (pix % 2)
-		marker.image_speed = 0
-		marker.instance = self                           
+		marker.image_speed = 0 
 	}
 }

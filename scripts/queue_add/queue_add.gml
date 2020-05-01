@@ -2,7 +2,6 @@
 /// @arg task Task type
 
 var task = argument0
-path = path_add()
 
 if !controllable { return }
 
