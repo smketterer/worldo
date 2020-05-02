@@ -1,5 +1,12 @@
 //this is changes the zoom based on scrolling
-zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.2, 2)
+zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.5, 2)
+
+log(zoom_level)
+if zoom_level > 1 {
+	gpu_set_texfilter(true)
+} else {
+	gpu_set_texfilter(false)
+}
 
 // get current size
 var view_w = camera_get_view_width(view_camera[0])

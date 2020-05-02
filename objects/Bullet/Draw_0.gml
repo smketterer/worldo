@@ -38,4 +38,4 @@ while (point_distance(x,y,xx,yy) >= 1) {
 }
 
 draw_sprite_ext(bullet1,image_index,x,y+10,image_xscale,image_yscale,direction,image_blend,image_alpha)
-// draw_sprite_ext(sprite_index,image_index,x,y-z+10,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+draw_sprite_ext(sprite_index,image_index,x,y-z+10,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
