@@ -31,7 +31,7 @@ if !target or !instance_exists(target) or path_get_number(path) <= 2 {
 		}
 	} else {
 		// No enemies left, cancel
-		// queue_pop()
+		queue_pop()
 		target = noone
 		move_to(x,y)
 		
