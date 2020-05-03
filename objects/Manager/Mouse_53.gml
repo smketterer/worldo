@@ -36,6 +36,12 @@ if cursor_mode == "select" {
 	mouse_start_x = mouse_x
 	mouse_start_y = mouse_y
 } else if cursor_mode == "build" {
-	var blueprint = instance_create_layer(floor(mouse_x/cellsize)*cellsize,floor(mouse_y/cellsize)*cellsize,"Instances",Blueprint)
+	var mouse_xx = floor(mouse_x/cellsize)*cellsize
+	var mouse_yy = floor(mouse_y/cellsize)*cellsize
 	
+	if !instance_position(mouse_xx,mouse_yy,Zone) {
+		var blueprint = instance_create_layer(mouse_xx,mouse_yy,"Instances",Blueprint)
+	} else {
+		log("can't build on a zone")
+	}
 }

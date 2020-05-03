@@ -85,8 +85,21 @@ if keyboard_check_pressed(vk_space) {
 }
 #endregion
 
+if keyboard_check_pressed(vk_f12) {
+	debug = !debug
+	keyboard_string = ""
+}
+
 if keyboard_check_pressed(vk_escape) {
-	game_end();
+	game_end()
+}
+
+if keyboard_check_pressed(vk_f5) {
+	save_game()
+}
+
+if keyboard_check_pressed(vk_f6) {
+	load_game()
 }
 
 if keyboard_check_pressed(ord("R")) {

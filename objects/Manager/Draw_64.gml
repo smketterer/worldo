@@ -38,11 +38,12 @@ var console_length = ds_list_size(console)
 if Manager.debug and console_length > 0 {
 	draw_set_colour(c_black)
 	draw_set_alpha(.75)
-	draw_rectangle(0,0,room_width,8+(12*console_length),false)
+	draw_rectangle(0,0,room_width,8+(12*(console_length+1)),false)
 	draw_set_alpha(1)
 	draw_set_colour(c_white)
 	
 	for (var i=0; i<=console_length-1; i++) {
 		draw_text(4,4+(12*i),string(string(i) + ": " + string(ds_list_find_value(console,i))))
 	}
+	draw_text(4,4+(12*(console_length)),"> " + keyboard_string)
 }

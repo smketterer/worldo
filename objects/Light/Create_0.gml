@@ -1,3 +1,3 @@
 /// @desc Creates a light using variables
 
-should_initialize = false
+should_initialize = true

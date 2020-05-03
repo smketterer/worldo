@@ -34,8 +34,12 @@ if (keyboard_check(vk_shift)) {
 	cam_speed = 50
 }
 
-var to_x = ((keyboard_check(ord("D")) - keyboard_check(ord("A"))) * cam_speed * (display_zoom))
-var to_y = ((keyboard_check(ord("S")) - keyboard_check(ord("W"))) * cam_speed * (display_zoom))
+var to_x = 0
+var to_y = 0
+if !Manager.debug {
+	to_x = ((keyboard_check(ord("D")) - keyboard_check(ord("A"))) * cam_speed * (display_zoom))
+	to_y = ((keyboard_check(ord("S")) - keyboard_check(ord("W"))) * cam_speed * (display_zoom))
+}
 
 // change coordinates of camera so zoom is centered
 var new_x = lerp(vpos_x,vpos_x+to_x+(view_w - display_zoom * default_zoom_width)/2, rate)

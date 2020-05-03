@@ -78,3 +78,14 @@ with (Entity) {
 	gpu_set_blendmode(bm_normal)
 }
 #endregion
+
+if cursor_mode == "build" or cursor_mode == "zone" {
+	var mouse_xx = floor(mouse_x/cellsize)*cellsize
+	var mouse_yy = floor(mouse_y/cellsize)*cellsize
+	gpu_set_blendmode(bm_add)
+	draw_sprite_part(select0,image_index,0,0,6,6,mouse_xx-2,mouse_yy-2)
+	draw_sprite_part(select0,image_index,14,0,6,6,mouse_xx+cellsize-4,mouse_yy-2)
+	draw_sprite_part(select0,image_index,14,14,6,6,mouse_xx+cellsize-4,mouse_yy+cellsize-4)
+	draw_sprite_part(select0,image_index,0,14,6,6,mouse_xx-2,mouse_yy+cellsize-4)
+	gpu_set_blendmode(bm_normal)
+}

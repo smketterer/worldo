@@ -11,15 +11,19 @@ mp_grid_add_instances(Manager.grid, Block, false)
 mp_grid_add_instances(Manager.grid, PassThrough, false)
 
 // window_set_fullscreen(true)
+NSP_initialize()
 draw_set_font(font0)
 debug = false
 console = ds_list_create()
 log("console initialized")
+
+#region Time
 prev_timescale = 0
 timescale = 1
+#endregion
 
 #region Lighting init
-lighting_global();
+lighting_global()
 tick = 0;
 dirty = false;
 #endregion
