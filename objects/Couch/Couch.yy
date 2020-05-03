@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "Couch",
     "eventList": [
-        
+        {
+            "id": "fff8235c-05a3-4d83-946f-fdd9bef01c46",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "8e551570-3e18-4866-a211-f08fbfea2c69"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

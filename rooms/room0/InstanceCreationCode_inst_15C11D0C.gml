@@ -1,0 +1,1 @@
+sprite_index = furniture2_1

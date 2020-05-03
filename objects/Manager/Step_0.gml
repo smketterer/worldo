@@ -92,12 +92,21 @@ if keyboard_check_pressed(vk_f12) {
 
 if debug {
 	if keyboard_check_pressed(vk_enter) {
-		log(keyboard_string)
+		log("$ " + keyboard_string)
 		eval(keyboard_string)
 		keyboard_string = ""
 	}
 	if keyboard_check(vk_control) and keyboard_check_pressed(ord("C")) {
 		log(keyboard_string + "^C")
+		keyboard_string = ""
+	}	
+	if keyboard_check_pressed(vk_up) {
+		var prev_command = ds_list_find_value(console,ds_list_size(console)-2)
+		prev_command = string_delete(prev_command, 1, 2)
+		keyboard_string = prev_command
+	}
+	if keyboard_check_pressed(vk_down) {
+		keyboard_string = ""
 	}
 }
 

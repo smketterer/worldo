@@ -17,7 +17,7 @@ var view_w = camera_get_view_width(view_camera[0])
 var view_h = camera_get_view_height(view_camera[0])
 
 // set the rate of interpolation
-var rate = 0.2
+var rate = 0.15
 
 // get new sizes by interpolating current and target zoomed size
 new_w = lerp(view_w, display_zoom * default_zoom_width, rate)
@@ -29,9 +29,9 @@ camera_set_view_size(view_camera[0], new_w, new_h)
 vpos_x = camera_get_view_x(view_camera[0])
 vpos_y = camera_get_view_y(view_camera[0])
 
-var cam_speed = 25
+var cam_speed = 35
 if (keyboard_check(vk_shift)) {
-	cam_speed = 50
+	cam_speed = 80
 }
 
 var to_x = 0

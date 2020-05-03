@@ -11,11 +11,12 @@ mp_grid_add_instances(Manager.grid, Block, false)
 mp_grid_add_instances(Manager.grid, PassThrough, false)
 
 // window_set_fullscreen(true)
-NSP_initialize()
 draw_set_font(font0)
 debug = false
+txr_init()
 console = ds_list_create()
-log("console initialized")
+th = txr_thread_create(txr_compile(""))
+log("# Debug console")
 
 #region Time
 prev_timescale = 0

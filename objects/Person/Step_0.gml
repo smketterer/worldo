@@ -4,7 +4,7 @@ if !aiming {
 	aim_dir = direction
 }
 
-if path_get_number(path) > 0 and path_position < 1 and Manager.timescale > 0 {
+if path_get_length(path) > 0 and path_position < 1 and Manager.timescale > 0 {
 	moving = true
 	move_length += 1
 	if (direction < 90 or direction > 270) {
