@@ -41,11 +41,9 @@ if !Manager.debug {
 	to_y = ((keyboard_check(ord("S")) - keyboard_check(ord("W"))) * cam_speed * (display_zoom))
 }
 
-// change coordinates of camera so zoom is centered
 var new_x = lerp(vpos_x,vpos_x+to_x+(view_w - display_zoom * default_zoom_width)/2, rate)
 var new_y = lerp(vpos_y,vpos_y+to_y+(view_h - display_zoom * default_zoom_height)/2, rate)
 
-// mouse panning
 if mouse_check_button_pressed(mb_middle) {
 	cursor_x = mouse_x;
 	cursor_y = mouse_y;

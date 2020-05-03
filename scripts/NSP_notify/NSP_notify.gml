@@ -23,4 +23,5 @@ if (argument_count > 1) {
 // You can use argument[0] (string) from now on to report an error in any way.
 // Default implementation: show_error(argument[0], false);
 
-show_error(argument[0], false);
+// show_error(argument[0], false);
+log("ERROR: " + argument[0])

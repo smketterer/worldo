@@ -90,8 +90,23 @@ if keyboard_check_pressed(vk_f12) {
 	keyboard_string = ""
 }
 
+if debug {
+	if keyboard_check_pressed(vk_enter) {
+		log(keyboard_string)
+		eval(keyboard_string)
+		keyboard_string = ""
+	}
+	if keyboard_check(vk_control) and keyboard_check_pressed(ord("C")) {
+		log(keyboard_string + "^C")
+	}
+}
+
 if keyboard_check_pressed(vk_escape) {
-	game_end()
+	if debug {
+		debug = false
+	} else {
+		game_end()
+	}
 }
 
 if keyboard_check_pressed(vk_f5) {

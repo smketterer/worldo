@@ -1,5 +1,5 @@
 event_inherited()
 
-object = WoodWall
+object = Lamp
 work = 50
 requirement = Wood

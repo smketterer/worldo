@@ -30,20 +30,24 @@ with (Person) {
 	draw_sprite(hands_sprite_index, 0, 13, offset)
 	draw_text(28, offset - 18, nickname)
 	draw_text(28, offset - 6, string(get_task_label(ds_priority_find_max(tasks))) + " | " + string(hp) + "/" + string(max_hp))
-	// draw_text(28, offset + 6, hauling)
 	pix++
 }
 
 var console_length = ds_list_size(console)
 if Manager.debug and console_length > 0 {
 	draw_set_colour(c_black)
-	draw_set_alpha(.75)
-	draw_rectangle(0,0,room_width,8+(12*(console_length+1)),false)
+	draw_set_alpha(.85)
+	draw_rectangle(0,0,room_width,8+(12*(min(console_length,10)+1)),false)
 	draw_set_alpha(1)
 	draw_set_colour(c_white)
-	
-	for (var i=0; i<=console_length-1; i++) {
-		draw_text(4,4+(12*i),string(string(i) + ": " + string(ds_list_find_value(console,i))))
+	var j = 0
+	for (var i=max(0,console_length-10); i<=console_length-1; i++) {
+		var message = ds_list_find_value(console,i)
+		if string_pos("ERROR", message) { draw_set_colour(c_red) }
+		if string_pos("#", message) == 1 { draw_set_colour(c_gray) }
+		draw_text(5,4+(12*j),string(string(i) + ": " + string(message)))
+		draw_set_colour(c_white)
+		j++
 	}
-	draw_text(4,4+(12*(console_length)),"> " + keyboard_string)
+	draw_text(5,4+(12*(min(console_length,10))),"> " + keyboard_string)
 }

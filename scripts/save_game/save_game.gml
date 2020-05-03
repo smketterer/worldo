@@ -1,16 +1,16 @@
+/// @desc Save file to JSON.
 /// @arg filename
 
 var filename = ""
 
 if argument_count == 0 {
-	filename = "save.dat"
+	filename = "save.json"
 } else {
 	filename = argument[0]
 }
 
-with Entity {
-	selected = false
-}
+var json = save_instances()
+var file = file_text_open_write(filename)
 
-game_save("save.dat")
-log("game saved to " + filename)
+file_text_write_string(file, json)
+file_text_close(file)
