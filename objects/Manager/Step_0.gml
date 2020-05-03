@@ -92,8 +92,8 @@ if keyboard_check_pressed(vk_escape) {
 if keyboard_check_pressed(ord("R")) {
 	with (Person) {
 		if selected {
-			if ds_priority_find_max(tasks) != "WAR" {
-				queue_add("WAR")
+			if ds_priority_find_max(tasks) != "DRAFT" {
+				queue_add("DRAFT")
 			} else {
 				queue_pop()
 			}

@@ -1,11 +1,15 @@
 //this is changes the zoom based on scrolling
 zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.5, 2)
+var display_zoom = zoom_level
 
-log(zoom_level)
 if zoom_level > 1 {
 	gpu_set_texfilter(true)
 } else {
 	gpu_set_texfilter(false)
+}
+
+if zoom_level <= 1 {
+	display_zoom = round(zoom_level * 2) / 2
 }
 
 // get current size
@@ -16,8 +20,8 @@ var view_h = camera_get_view_height(view_camera[0])
 var rate = 0.2
 
 // get new sizes by interpolating current and target zoomed size
-new_w = lerp(view_w, zoom_level * default_zoom_width, rate)
-new_h = lerp(view_h, zoom_level * default_zoom_height, rate)
+new_w = lerp(view_w, display_zoom * default_zoom_width, rate)
+new_h = lerp(view_h, display_zoom * default_zoom_height, rate)
 
 // apply the new size
 camera_set_view_size(view_camera[0], new_w, new_h)
@@ -30,12 +34,12 @@ if (keyboard_check(vk_shift)) {
 	cam_speed = 50
 }
 
-var to_x = ((keyboard_check(ord("D")) - keyboard_check(ord("A"))) * cam_speed * (zoom_level))
-var to_y = ((keyboard_check(ord("S")) - keyboard_check(ord("W"))) * cam_speed * (zoom_level))
+var to_x = ((keyboard_check(ord("D")) - keyboard_check(ord("A"))) * cam_speed * (display_zoom))
+var to_y = ((keyboard_check(ord("S")) - keyboard_check(ord("W"))) * cam_speed * (display_zoom))
 
 // change coordinates of camera so zoom is centered
-var new_x = lerp(vpos_x,vpos_x+to_x+(view_w - zoom_level * default_zoom_width)/2, rate)
-var new_y = lerp(vpos_y,vpos_y+to_y+(view_h - zoom_level * default_zoom_height)/2, rate)
+var new_x = lerp(vpos_x,vpos_x+to_x+(view_w - display_zoom * default_zoom_width)/2, rate)
+var new_y = lerp(vpos_y,vpos_y+to_y+(view_h - display_zoom * default_zoom_height)/2, rate)
 
 // mouse panning
 if mouse_check_button_pressed(mb_middle) {

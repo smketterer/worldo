@@ -17,7 +17,7 @@ if mouse_check_button(mb_left) and bbox {
 	draw_rectangle(mouse_gui_x, mouse_gui_y, window_mouse_get_x(), window_mouse_get_y(), true)
 }
 draw_text(5,16,"[" + string(mouse_x) + ", " + string(mouse_y) + "]")
-draw_text(5,28,"zoom: " + string((1 - Camera.zoom_level)*10))
+draw_text(5,28,"zoom: " + string(2 - Camera.zoom_level))
 draw_text(5,40,"timescale: " + string(timescale))
 draw_text(5,52,string(floor(hours % 24))+":"+string(round(minutes % 60)))
 draw_text(5,64,string(day)+" day of "+string(season)+", Year "+string(year))
@@ -28,8 +28,21 @@ with (Person) {
 	draw_sprite(select2, image_index, 14, offset)
 	draw_sprite(sprite_index, 0, 13, offset)
 	draw_sprite(hands_sprite_index, 0, 13, offset)
-	draw_text(28, offset - 18, name)
+	draw_text(28, offset - 18, nickname)
 	draw_text(28, offset - 6, string(get_task_label(ds_priority_find_max(tasks))) + " | " + string(hp) + "/" + string(max_hp))
 	// draw_text(28, offset + 6, hauling)
 	pix++
+}
+
+var console_length = ds_list_size(console)
+if Manager.debug and console_length > 0 {
+	draw_set_colour(c_black)
+	draw_set_alpha(.75)
+	draw_rectangle(0,0,room_width,8+(12*console_length),false)
+	draw_set_alpha(1)
+	draw_set_colour(c_white)
+	
+	for (var i=0; i<=console_length-1; i++) {
+		draw_text(4,4+(12*i),string(string(i) + ": " + string(ds_list_find_value(console,i))))
+	}
 }

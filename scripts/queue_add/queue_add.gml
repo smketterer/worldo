@@ -5,10 +5,10 @@ var task = argument0
 
 if !controllable { return }
 
-if task == "WAR" {
+if task == "DRAFT" {
 	ds_priority_add(tasks, task, 1000)
+	reset_resource_claims()
+	move_to(x,y)
 } else {
 	ds_priority_add(tasks, task, 100)
 }
-
-reset_resource_claims()

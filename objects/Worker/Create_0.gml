@@ -11,10 +11,12 @@ cutting_skill = 2 + round(random(5))
 constructing_skill = 2 + round(random(5))
 hauling_skill = 2 + round(random(5))
 shooting_skill = 2 + round(random(5))
+building_skill = 2 + round(random(5))
 
 // needs base
-satiety = 100
-social = 100
+hungry = 100
+tired = 100
+isolated = 100
 
 // movable (worker) base
 path = path_add()

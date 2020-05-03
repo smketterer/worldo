@@ -1,6 +1,5 @@
 var instance = self
 var resource = noone
-
 with Resource {
 	if claimed_by == instance {
 		claimed = true
@@ -8,7 +7,6 @@ with Resource {
 		resource = self
 	}
 }
-
 if !resource and hauling == noone {
 	// No resource, find closest unclaimed storable item
 	refresh_grid()
@@ -24,8 +22,8 @@ if !resource and hauling == noone {
 } else if hauling == noone {
 	// Next to resource, carry it.
 	if path_position == 1 {
-		resource.lifted -= ((hauling_skill / 10) * Manager.timescale)
-		if resource.lifted <= 0 {
+		resource.work -= ((hauling_skill / 10) * Manager.timescale)
+		if resource.work <= 0 {
 			var closest = get_closest_unclaimed_resource(Zone)
 			if closest {
 				hauling_to = [closest.x, closest.y]

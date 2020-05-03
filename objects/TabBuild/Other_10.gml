@@ -1,0 +1,1 @@
+Manager.cursor_mode = "build"

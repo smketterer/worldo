@@ -6,7 +6,7 @@ var task = argument0
 switch (task) {
 	case "DEFEND":
 		return "Defending the base"
-	case "WAR":
+	case "DRAFT":
 		return "Drafted"
 	case "CHOP":
 		return "Chopping wood"
@@ -14,6 +14,8 @@ switch (task) {
 		return "Foraging"
 	case "HAUL":
 		return "Hauling items"
+	case "BUILD":
+		return "Building items"
 	default:
 		return "Idle"
 }

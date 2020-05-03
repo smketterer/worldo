@@ -7,6 +7,8 @@ var ccreator = creator
 
 z -= lengthdir_y(speed,zdir)
 
+var shoulddraw = true
+
 while (point_distance(x,y,xx,yy) >= 1) {
 	var bullet = self
 	var meeting = instance_position(xx,yy,Entity)
@@ -16,6 +18,7 @@ while (point_distance(x,y,xx,yy) >= 1) {
 				if variable_instance_exists(meeting.id,"hp") {
 					hp -= 10
 					with bullet {
+						shoulddraw = false
 						instance_destroy()
 					}
 				}
@@ -38,4 +41,6 @@ while (point_distance(x,y,xx,yy) >= 1) {
 }
 
 draw_sprite_ext(bullet1,image_index,x,y+10,image_xscale,image_yscale,direction,image_blend,image_alpha)
-draw_sprite_ext(sprite_index,image_index,x,y-z+10,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+if Manager.timescale == 0 or shoulddraw {
+	draw_sprite_ext(sprite_index,image_index,x,y-z+10,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+}

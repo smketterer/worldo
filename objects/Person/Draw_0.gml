@@ -68,11 +68,3 @@ if ydir == 0 {
 
 barrel_x += lengthdir_x(13,aim_dir)
 barrel_y += lengthdir_y(13,aim_dir)
-
-if Manager.debug {
-	if instance_exists(target) {
-		draw_text(x,y,string(target.nickname))
-	}
-	draw_text(x,y+8,string(firing) + "," + string(aiming))
-	draw_text(x,y+16,string(path_get_number(path)) + "," + string(id))
-}
