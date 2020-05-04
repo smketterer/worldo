@@ -4,7 +4,7 @@
 gml_pragma("global", "save_meta();")
 
 global.save_map = ds_map_create()
-global.save_map[? Person] = ["x", "y", "first_name", "last_name", "nickname", "name", "moving"]
+global.save_map[? Person] = ["x", "y", "first_name", "last_name", "nickname", "name", "sex", "age", "sprite_index"]
 
 global.save_map[? Resource] = ["x", "y", "hp"]
 global.save_map[? Tree] = global.save_map[? Resource]

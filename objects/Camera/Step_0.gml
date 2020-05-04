@@ -56,12 +56,14 @@ if mouse_check_button(mb_middle) {
 
 camera_set_view_pos(view_camera[0], new_x, new_y)
 
-if keyboard_check_pressed(vk_home) {
-	rounded_zoom = round(zoom_level / .5) * .5
-	zoom_level = rounded_zoom - .5	
-}
+if !Manager.debug {
+	if keyboard_check_pressed(vk_home) {
+		rounded_zoom = round(zoom_level / .5) * .5
+		zoom_level = rounded_zoom - .5	
+	}
 
-if keyboard_check_pressed(vk_end) {
-	rounded_zoom = round(zoom_level / .5) * .5
-	zoom_level = rounded_zoom + .5
+	if keyboard_check_pressed(vk_end) {
+		rounded_zoom = round(zoom_level / .5) * .5
+		zoom_level = rounded_zoom + .5
+	}
 }

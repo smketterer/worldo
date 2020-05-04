@@ -35,6 +35,10 @@ with Entity {
 	y = floor(y/Manager.cellsize)*Manager.cellsize
 }
 
+with Person {
+	moving = false
+}
+
 with Storable {
 	layer_add_instance(initial_layer,self)
 }

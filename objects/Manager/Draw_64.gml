@@ -1,7 +1,7 @@
 str_selected = ""
 size = ds_list_size(selected)
 for (var i=0; i<size; i++) {
-	if (variable_instance_exists(ds_list_find_value(selected, i), "name")) {
+	if (variable_instance_exists(ds_list_find_value(selected, i), "nickname")) {
 		str_selected += string(ds_list_find_value(selected, i).nickname)
 		str_selected += ","
 	} else if instance_exists(ds_list_find_value(selected, i)) {
@@ -21,6 +21,39 @@ draw_text(5,28,"zoom: " + string(2 - Camera.zoom_level))
 draw_text(5,40,"timescale: " + string(timescale))
 draw_text(5,52,string(floor(hours % 24))+":"+string(round(minutes % 60)))
 draw_text(5,64,string(day)+" day of "+string(season)+", Year "+string(year))
+
+#region tabs
+if active_panel != "none" {
+	var top = window_get_height() - tab_height
+	var bottom = window_get_height() - 16
+	draw_set_colour(make_color_rgb(7,7,8))
+	draw_rectangle(0,top, tab_width, bottom, false)
+	draw_set_colour(c_black)
+	draw_rectangle(0,top, tab_width, bottom, true)
+	draw_set_colour(make_color_rgb(20,20,20))
+	draw_rectangle(1,top+1, tab_width-1, bottom, true)
+	draw_set_colour(c_gray)
+	draw_text(8,top+4,active_panel)
+	draw_set_colour(c_white)
+}
+switch active_panel {
+	case "Inspecting":
+		if inspecting.object_index == Person {
+			draw_text(8,top+16,inspecting.name)
+			draw_text(8,top+28,string(inspecting.age) + " year old " + inspecting.sex + " colonist")
+			draw_set_colour(c_black)
+			draw_line(0,top+47,tab_width-1,top+47)
+			draw_set_colour(make_color_rgb(20,20,20))
+			draw_line(1,top+48,tab_width-1,top+48)
+			draw_set_colour(c_white)
+		}
+		break
+	case "Build objects":
+		
+	default:
+		break
+}
+#endregion
 
 #region person list
 var pix = 0;
@@ -48,11 +81,18 @@ if Manager.debug and console_length > 0 {
 		var message = ds_list_find_value(console,i)
 		if string_pos("\t", message) { draw_set_colour(c_red) }
 		if string_pos("#", string(message)) == 1 or string_pos("undefined", string(message)) { draw_set_colour(c_gray) }
-		draw_text(5,4+(12*j),string(string(message)))
+		draw_text(4,4+(12*j),string(string(message)))
 		draw_set_colour(c_ltgray)
 		j++
 	}
 	draw_set_colour(c_white)
-	draw_text(5,4+(12*(min(console_length,10))),"$ " + keyboard_string)
+	
+	var i, h, ptext;
+	ptext = string_replace_all(text, "#", "�")
+	draw_text(4,4+(12*(min(console_length,10))),"$ ")
+	draw_text(4+string_width("$ "),4+(12*(min(console_length,10))), string_hash_to_newline(ptext))
+	i = string_width(string_hash_to_newline(string_copy(ptext, 1, caret)))
+	h = string_height(string_hash_to_newline("\\\\"))
+	draw_line(4+i+string_width("$ "),6+(12*(min(console_length,10))),5+i+string_width("$ "),1+(12*(min(console_length,10)))+h)
 }
 #endregion

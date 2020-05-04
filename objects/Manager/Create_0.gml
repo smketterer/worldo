@@ -1,22 +1,37 @@
 randomize()
 
-// Cursor and cells
-cursor_mode = "select"
 selected = ds_list_create()
 cellsize = 16
+
+// UI
+cursor_mode = "select"
+active_panel = "none"
+tab_height = 256
+tab_width = 191
+active_blueprint = noone
 
 // Pathfinding
 grid = mp_grid_create(0,0,room_width/cellsize,room_height/cellsize,cellsize,cellsize)
 mp_grid_add_instances(Manager.grid, Block, false)
 mp_grid_add_instances(Manager.grid, PassThrough, false)
 
-// window_set_fullscreen(true)
 draw_set_font(font0)
+
+#region console
 debug = false
 txr_init()
 console = ds_list_create()
 th = txr_thread_create(txr_compile(""))
 log("# Debug console")
+caret_flash = 0
+caret_flash_rate = 15
+caret_move = 0
+caret_move_rate = 7
+text = "" // current text
+caret = 0 // caret position
+fillchar = "`" // used as filler character in input handling.
+filltext = string_repeat(fillchar, 10)
+#endregion
 
 #region Time
 prev_timescale = 0

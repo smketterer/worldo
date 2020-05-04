@@ -9,3 +9,5 @@ if cursor_mode == "select" {
 } else {
 	cursor_mode = "select"
 }
+
+reset_active_panel()

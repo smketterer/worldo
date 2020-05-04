@@ -63,6 +63,10 @@ if ds_list_size(resources) == 0 and hauling == noone {
 							move_to(resource2.x, resource2.y)
 						}
 					}
+					if resource.stored {
+						var zone = instance_position(resource.x,resource.y,Zone)
+						zone.claimed = false
+					}
 				}
 			}
 		}

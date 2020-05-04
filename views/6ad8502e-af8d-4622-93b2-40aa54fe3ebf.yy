@@ -4,12 +4,7 @@
     "mvc": "1.1",
     "name": "6ad8502e-af8d-4622-93b2-40aa54fe3ebf",
     "children": [
-        "71a93b2a-e0a0-4dc9-861a-0ad22d555973",
-        "3eb0aaf9-ba1b-4c95-b023-2d1341501ad8",
-        "fa6b643e-e375-4926-aaf7-ff843e99ffa3",
-        "c75f1585-2e90-4898-b1ce-779d2c8927ec",
-        "d5d7c7e6-c6c8-4142-8165-3d81e800f85c",
-        "90291172-d496-42aa-b5c2-6b7c0b499045"
+        "6f91cc3b-fb28-406d-b092-080d28c22a15"
     ],
     "filterType": "GMScript",
     "folderName": "System",
