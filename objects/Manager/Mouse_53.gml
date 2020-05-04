@@ -32,7 +32,7 @@ if cursor_mode == "select" {
 		ds_list_add(selected, instance)
 		instance.selected = true
 		bbox = false // Whether to run the bounding box select on release or not.
-		active_panel = "Inspecting"
+		set_active_panel("Inspecting")
 		inspecting = instance
 	} else {
 		bbox = true
@@ -66,5 +66,7 @@ if cursor_mode == "select" {
 		} else {
 			log("can't build on a zone")
 		}
+	} else {
+		cursor_mode = "select"
 	}
 }

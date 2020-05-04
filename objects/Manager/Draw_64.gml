@@ -25,7 +25,7 @@ draw_text(5,64,string(day)+" day of "+string(season)+", Year "+string(year))
 #region tabs
 if active_panel != "none" {
 	var top = window_get_height() - tab_height
-	var bottom = window_get_height() - 16
+	var bottom = window_get_height() - 15
 	draw_set_colour(make_color_rgb(7,7,8))
 	draw_rectangle(0,top, tab_width, bottom, false)
 	draw_set_colour(c_black)
@@ -38,18 +38,18 @@ if active_panel != "none" {
 }
 switch active_panel {
 	case "Inspecting":
-		if inspecting.object_index == Person {
-			draw_text(8,top+16,inspecting.name)
-			draw_text(8,top+28,string(inspecting.age) + " year old " + inspecting.sex + " colonist")
+		if instance_exists(inspecting) and inspecting.object_index == Person {
+			draw_text(8,top+17,inspecting.name)
+			draw_text(8,top+29,string(inspecting.age) + " year old " + inspecting.sex + " colonist")
 			draw_set_colour(c_black)
-			draw_line(0,top+47,tab_width-1,top+47)
+			draw_line(0,top+48,tab_width-1,top+47)
 			draw_set_colour(make_color_rgb(20,20,20))
-			draw_line(1,top+48,tab_width-1,top+48)
+			draw_line(1,top+49,tab_width-1,top+48)
 			draw_set_colour(c_white)
 		}
 		break
 	case "Build objects":
-		
+		break
 	default:
 		break
 }
@@ -58,6 +58,7 @@ switch active_panel {
 #region person list
 var pix = 0;
 with (Person) {
+	if faction != "player" { break }
 	var offset = 104+(32*pix)
 	draw_sprite(select2, image_index, 14, offset)
 	draw_sprite(sprite_index, 0, 13, offset)

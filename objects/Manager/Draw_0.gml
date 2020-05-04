@@ -89,6 +89,6 @@ if cursor_mode == "build" and active_blueprint {
 	draw_sprite_part(select0,image_index,0,14,6,6,mouse_xx-2,mouse_yy+cellsize-4)
 	gpu_set_blendmode(bm_normal)
 	draw_set_alpha(.5)
-	draw_sprite(get_object_sprite(active_blueprint),image_index,mouse_xx,mouse_yy)
+	draw_sprite(object_get_sprite(active_blueprint),image_index,mouse_xx,mouse_yy)
 	draw_set_alpha(1)
 }

@@ -1,2 +1,1 @@
-log("orders clicked")
-Manager.active_panel = "Assign Orders"
+set_active_panel("Assign orders")
