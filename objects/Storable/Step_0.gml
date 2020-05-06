@@ -7,7 +7,7 @@ if claimed_by == noone and !claimed {
 }
 
 if work <= 0 {
-	if (claimed_by) {
+	if (claimed_by and !claimed_by.hauling) {
 		var newinst = instance_copy(false)
 		layer_add_instance(claimed_by.layer, newinst)
 		newinst.selected = false

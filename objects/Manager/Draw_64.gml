@@ -42,24 +42,13 @@ switch active_panel {
 			if inspecting.object_index == Person or object_is_ancestor(inspecting.object_index, Person) {
 				// Person
 				draw_text(8,top+17,inspecting.name)
-				
-				// health
-				draw_set_colour(c_maroon)
-				draw_rectangle(8,top+34,8+round(60*(inspecting.hp/inspecting.max_hp)),top+44,false)
-				draw_set_colour(c_black)
-				draw_rectangle(9,top+35,8+59,top+44,true)
-				draw_set_halign(fa_center)
-				draw_text(8+30,top+33,string(round(inspecting.hp)) + "/" + string(inspecting.max_hp))
-				draw_set_colour(c_white)
-				draw_rectangle(8,top+34,8+60,top+44,true)
-				draw_text(8+30,top+32,string(round(inspecting.hp)) + "/" + string(inspecting.max_hp))
-				draw_set_halign(fa_left)
+				draw_health_bar(top)
 				
 				var ff = inspecting.faction
 				if string_length(ff) > 0 and ff == "player" {
 					draw_set_colour(merge_colour(c_blue,c_aqua,.5))
 				} else {
-					draw_set_colour(c_red)
+					draw_set_colour(merge_colour(c_red,c_gray,.5))
 				}
 				draw_text(8+68,top+31,capitalize(string(ff)))
 				draw_line(8+67,top+44,8+65+string_width(ff),top+44)
@@ -81,10 +70,11 @@ switch active_panel {
 					obj_name = capitalize(obj_name)
 				}
 				draw_text(8,top+17,obj_name)
-				draw_text(8,top+29,string(round(inspecting.hp)) + "/" + string(inspecting.max_hp))
-				draw_text(8,top+41,"Work remaining: " + string(round(inspecting.work)))
+				draw_health_bar(top)
+				
+				draw_text(8,top+47,"Work remaining: " + string(round(inspecting.work)))
 				draw_set_colour(c_gray)
-				draw_text_ext(8,top+55,inspecting.description,12,tab_width-22)
+				draw_text_ext(8,top+66,inspecting.description,12,tab_width-22)
 				draw_set_colour(c_white)
 			} else {
 				// Default
@@ -96,19 +86,7 @@ switch active_panel {
 					obj_name = capitalize(obj_name)
 				}
 				draw_text(8,top+17,obj_name)
-				
-				// health
-				draw_set_colour(c_maroon)
-				draw_rectangle(8,top+34,8+round(60*(inspecting.hp/inspecting.max_hp)),top+44,false)
-				draw_set_colour(c_black)
-				draw_rectangle(9,top+35,8+59,top+44,true)
-				draw_set_halign(fa_center)
-				draw_text(8+30,top+33,string(round(inspecting.hp)) + "/" + string(inspecting.max_hp))
-				draw_set_colour(c_white)
-				draw_rectangle(8,top+34,8+60,top+44,true)
-				draw_text(8+30,top+32,string(round(inspecting.hp)) + "/" + string(inspecting.max_hp))
-				draw_set_halign(fa_left)
-				
+				draw_health_bar(top)
 				
 				draw_set_colour(c_gray)
 				draw_text_ext(8,top+47,inspecting.description,12,tab_width-22)

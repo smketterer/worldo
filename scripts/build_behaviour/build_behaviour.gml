@@ -7,27 +7,6 @@ with Resource {
 		ds_list_add(resources, self)
 	}
 }
-/*
-if !resource {
-	// No resource, find closest unclaimed bush
-	refresh_grid()
-	var closest = get_closest_unclaimed_resource(Blueprint)
-	if closest {
-		move_to(closest.x, closest.y)
-		closest.claimed = true
-		closest.claimed_by = self
-	} else {
-		// No resources left, cancel
-		queue_pop()
-	}
-} else {
-	// Next to resource, build it.
-	if path_position == 1 {
-		resource.work -= ((building_skill / 10) * Manager.timescale)
-	}
-}
-*/
-
 
 if ds_list_size(resources) == 0 and hauling == noone {
 	// Get closest blueprint and required resources

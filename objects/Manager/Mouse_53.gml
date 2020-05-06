@@ -34,10 +34,8 @@ if cursor_mode == "select" {
 		instance.selected = true
 		set_active_panel("Inspecting")
 		inspecting = instance
-		log("bbox false")
 		bbox = false
 	} else {
-		log("bbox true")
 		bbox = true
 	}
 	

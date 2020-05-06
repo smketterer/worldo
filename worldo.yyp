@@ -1975,6 +1975,14 @@
             }
         },
         {
+            "Key": "eee2be98-3f8f-4622-91d8-8e4be82f3a66",
+            "Value": {
+                "id": "911beb3f-ccbb-4ea1-bcd5-5d6d7032f54c",
+                "resourcePath": "scripts\\draw_health_bar\\draw_health_bar.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ef47d4de-b5c4-4dd3-b2dc-8938f2b723cf",
             "Value": {
                 "id": "3c61883f-24e7-4c9d-b964-c062b66b64b7",
@@ -2225,6 +2233,7 @@
         "90291172-d496-42aa-b5c2-6b7c0b499045",
         "2a382981-bee4-445a-bc21-1e7589096f12",
         "25e786a1-39df-46d1-afb3-b55b227ad6d8",
+        "eee2be98-3f8f-4622-91d8-8e4be82f3a66",
         "dde3991d-4590-4b1e-88cf-f36fe032cea8",
         "499324c9-a07a-4e9b-8697-99314c04fa76",
         "85cfd113-9bbf-4748-88de-ae4a160bd546"
