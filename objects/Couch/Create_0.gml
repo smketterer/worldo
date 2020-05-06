@@ -1,6 +1,6 @@
 event_inherited()
 image_speed = 0
 
-name = "leather couch"
+max_hp = 100
+hp = 100
 description = "A very comfortable couch."
-resource_description = "Requires 10 leather."

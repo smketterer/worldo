@@ -13,7 +13,6 @@ light.should_initialize = true
 light_add = instance_create_layer(x+8,y+3,layer_get_id("Overlays"),LightAdd)
 light_add.color = color
 
+max_hp = 100
 hp = 100
-name = "standing lamp"
-description = "Illuminates an area with a randon colour."
-resource_description = "Requires 1 component."
+description = "Illuminates an area."

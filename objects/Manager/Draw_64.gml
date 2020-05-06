@@ -5,7 +5,7 @@ for (var i=0; i<size; i++) {
 		str_selected += string(ds_list_find_value(selected, i).nickname)
 		str_selected += ","
 	} else if instance_exists(ds_list_find_value(selected, i)) {
-		str_selected += string(object_get_name(ds_list_find_value(selected, i).object_index))
+		str_selected += string(ds_list_find_value(selected, i))
 		str_selected += ","
 	} else {
 		continue
@@ -38,17 +38,86 @@ if active_panel != "none" {
 }
 switch active_panel {
 	case "Inspecting":
-		if instance_exists(inspecting) and inspecting.object_index == Person {
-			draw_text(8,top+17,inspecting.name)
-			draw_text(8,top+29,string(inspecting.age) + " year old " + inspecting.sex + " colonist")
-			draw_set_colour(c_black)
-			draw_line(0,top+48,tab_width-1,top+47)
-			draw_set_colour(make_color_rgb(20,20,20))
-			draw_line(1,top+49,tab_width-1,top+48)
-			draw_set_colour(c_white)
+		if instance_exists(inspecting) {
+			if inspecting.object_index == Person or object_is_ancestor(inspecting.object_index, Person) {
+				// Person
+				draw_text(8,top+17,inspecting.name)
+				
+				// health
+				draw_set_colour(c_maroon)
+				draw_rectangle(8,top+34,8+round(60*(inspecting.hp/inspecting.max_hp)),top+44,false)
+				draw_set_colour(c_black)
+				draw_rectangle(9,top+35,8+59,top+44,true)
+				draw_set_halign(fa_center)
+				draw_text(8+30,top+33,string(round(inspecting.hp)) + "/" + string(inspecting.max_hp))
+				draw_set_colour(c_white)
+				draw_rectangle(8,top+34,8+60,top+44,true)
+				draw_text(8+30,top+32,string(round(inspecting.hp)) + "/" + string(inspecting.max_hp))
+				draw_set_halign(fa_left)
+				
+				var ff = inspecting.faction
+				if string_length(ff) > 0 and ff == "player" {
+					draw_set_colour(merge_colour(c_blue,c_aqua,.5))
+				} else {
+					draw_set_colour(c_red)
+				}
+				draw_text(8+68,top+31,capitalize(string(ff)))
+				draw_line(8+67,top+44,8+65+string_width(ff),top+44)
+				draw_set_colour(c_white)
+				
+				draw_text(8,top+47,string(inspecting.age) + " year old " + inspecting.sex)
+				draw_set_colour(c_black)
+				draw_line(0,top+66,tab_width-1,top+66)
+				draw_set_colour(make_color_rgb(20,20,20))
+				draw_line(1,top+67,tab_width-1,top+67)
+				draw_set_colour(c_white)
+			} else if inspecting.object_index == Blueprint {
+				// Blueprint
+				var obj_name = get_object_name(inspecting.object_index)
+				if !string_length(obj_name) {
+					// Fall back to object name
+					obj_name = object_get_name(inspecting.object_index)
+				} else {
+					obj_name = capitalize(obj_name)
+				}
+				draw_text(8,top+17,obj_name)
+				draw_text(8,top+29,string(round(inspecting.hp)) + "/" + string(inspecting.max_hp))
+				draw_text(8,top+41,"Work remaining: " + string(round(inspecting.work)))
+				draw_set_colour(c_gray)
+				draw_text_ext(8,top+55,inspecting.description,12,tab_width-22)
+				draw_set_colour(c_white)
+			} else {
+				// Default
+				var obj_name = get_object_name(inspecting.object_index)
+				if !string_length(obj_name) {
+					// Fall back to object name
+					obj_name = object_get_name(inspecting.object_index)
+				} else {
+					obj_name = capitalize(obj_name)
+				}
+				draw_text(8,top+17,obj_name)
+				
+				// health
+				draw_set_colour(c_maroon)
+				draw_rectangle(8,top+34,8+round(60*(inspecting.hp/inspecting.max_hp)),top+44,false)
+				draw_set_colour(c_black)
+				draw_rectangle(9,top+35,8+59,top+44,true)
+				draw_set_halign(fa_center)
+				draw_text(8+30,top+33,string(round(inspecting.hp)) + "/" + string(inspecting.max_hp))
+				draw_set_colour(c_white)
+				draw_rectangle(8,top+34,8+60,top+44,true)
+				draw_text(8+30,top+32,string(round(inspecting.hp)) + "/" + string(inspecting.max_hp))
+				draw_set_halign(fa_left)
+				
+				
+				draw_set_colour(c_gray)
+				draw_text_ext(8,top+47,inspecting.description,12,tab_width-22)
+				draw_set_colour(c_white)
+			}
 		}
 		break
 	case "Build objects":
+		// Buttons added via TabBuild onclick
 		break
 	default:
 		break

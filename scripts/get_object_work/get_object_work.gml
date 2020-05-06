@@ -9,4 +9,6 @@ switch object {
 		return 50
 	case Couch:
 		return 100
+	default:
+		return 0
 }

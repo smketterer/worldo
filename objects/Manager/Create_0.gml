@@ -9,6 +9,7 @@ active_panel = "none"
 tab_height = 256
 tab_width = 191
 active_blueprint = noone
+inspecting = noone
 
 // Pathfinding
 grid = mp_grid_create(0,0,room_width/cellsize,room_height/cellsize,cellsize,cellsize)

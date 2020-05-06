@@ -1135,6 +1135,14 @@
             }
         },
         {
+            "Key": "86c21671-bab4-4fee-8937-3afd2dc4259d",
+            "Value": {
+                "id": "70c53e27-98db-4560-98fe-40d0017e29e3",
+                "resourcePath": "scripts\\capitalize\\capitalize.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "8807073f-b1e0-4ed9-8a3b-fe24c7afc5db",
             "Value": {
                 "id": "a2b69a4f-91a5-43ad-93fe-b95e9b7e82d4",
@@ -2168,6 +2176,7 @@
         "a716fea4-b3e1-47dc-a15c-02219e0ad492",
         "36c418e5-c87a-408c-8906-0e9ae676aab4",
         "8539be1f-3ef1-4fef-a64c-14d491ab351d",
+        "86c21671-bab4-4fee-8937-3afd2dc4259d",
         "8807073f-b1e0-4ed9-8a3b-fe24c7afc5db",
         "cb21162d-6f74-478a-85fc-cdfa73522696",
         "a34a9c89-36af-42df-ba48-4028148fc7bb",

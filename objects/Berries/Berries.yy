@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "Berries",
     "eventList": [
-        
+        {
+            "id": "910d1d0d-d01a-4fb1-8b51-4ad82781787b",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "904a1310-f87c-4a38-83da-f81304c8c62a"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

@@ -9,4 +9,6 @@ switch object {
 		return "standing lamp"
 	case Couch:
 		return "leather couch"
+	default:
+		return ""
 }

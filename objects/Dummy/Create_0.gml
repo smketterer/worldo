@@ -6,6 +6,7 @@ nickname = "Dummy"
 sprite_index = furniture1
 hands_sprite_index = furniture1
 
+sex = "training dummy"
 faction = "enemy"
 
 hp = 100

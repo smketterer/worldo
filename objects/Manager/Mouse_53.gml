@@ -26,15 +26,18 @@ if cursor_mode == "select" {
 		selected = ds_list_create()
 	}
 
-	var instance = instance_position(mouse_x, mouse_y, all)
-	if instance and ds_list_find_index(selected, instance) < 0 and object_is_ancestor(instance.object_index, Entity) {
+	var instance = instance_position(mouse_x, mouse_y, Entity)
+	
+	if instance and object_is_ancestor(instance.object_index, Entity) and ds_list_find_index(selected, instance) < 0 {
 		var i = ds_list_find_index(selected, instance)
 		ds_list_add(selected, instance)
 		instance.selected = true
-		bbox = false // Whether to run the bounding box select on release or not.
 		set_active_panel("Inspecting")
 		inspecting = instance
+		log("bbox false")
+		bbox = false
 	} else {
+		log("bbox true")
 		bbox = true
 	}
 	
@@ -63,6 +66,7 @@ if cursor_mode == "select" {
 			blueprint.object = active_blueprint
 			blueprint.requirement = get_object_requirement(active_blueprint)
 			blueprint.work = get_object_work(active_blueprint)
+			blueprint.description = "A " + string(get_object_name(active_blueprint)) + " blueprint."
 		} else {
 			log("can't build on a zone")
 		}

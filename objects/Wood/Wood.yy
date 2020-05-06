@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "Wood",
     "eventList": [
-        
+        {
+            "id": "6da5a6f7-1ff3-41a4-ba07-d1bd94108674",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "367593fc-5a9d-4deb-bb77-3efcc9212a84"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

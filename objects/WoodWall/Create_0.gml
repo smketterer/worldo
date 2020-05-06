@@ -1,7 +1,6 @@
 event_inherited()
 
 tileset = wall0
-hp = 10
-name = "wooden wall"
+max_hp = 50
+hp = 50
 description = "A simple but nice-looking wall. It is flimsier than other materials."
-resource_description = "Requires 1 wood."

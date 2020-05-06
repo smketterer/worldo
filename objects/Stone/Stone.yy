@@ -4,7 +4,16 @@
     "mvc": "1.0",
     "name": "Stone",
     "eventList": [
-        
+        {
+            "id": "8f7ad5eb-3fe5-4e22-944b-55a05124e510",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "f9c559f5-9689-4662-b933-af71b013a809"
+        }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,
