@@ -2055,6 +2055,14 @@
             }
         },
         {
+            "Key": "fa9b679a-036c-4510-8613-95c026fb8f13",
+            "Value": {
+                "id": "e49b88ab-c06f-45f5-a997-201de799594d",
+                "resourcePath": "sprites\\icons0\\icons0.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "fb7b7395-2e2c-4a21-b5b6-d56bfca8e7e3",
             "Value": {
                 "id": "3f53d0eb-a49f-4496-b1f8-a3a7cbc07fd9",

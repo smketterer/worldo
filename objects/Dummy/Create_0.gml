@@ -12,4 +12,6 @@ faction = "enemy"
 hp = 100
 max_hp = 100
 
+age = 0
+
 // equip = ds_list_create()
