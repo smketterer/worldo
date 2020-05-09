@@ -45,6 +45,10 @@ if !resource and hauling == noone {
 		resource.stored = true
 		hauling.x = hauling_to[0]
 		hauling.y = hauling_to[1]
+		
+		var zone = instance_place(hauling_to[0],hauling_to[1],Zone)
 		reset_resource_claims()
+		zone.claimed = true
+		zone.claimed_by = resource
 	}
 }
