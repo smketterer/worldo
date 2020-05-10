@@ -1,6 +1,10 @@
 // shadow
 polygon = polygon_from_instance(id);
 
+if ds_priority_size(tasks) == 0 {
+	add_performable_tasks()
+}
+
 switch (ds_priority_find_max(tasks)) {
 	case "CHOP":
 		chop_behaviour()

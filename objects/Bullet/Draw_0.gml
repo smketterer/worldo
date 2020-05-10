@@ -28,7 +28,7 @@ while (point_distance(x,y,xx,yy) >= 1) {
 		}
 	}
 	if (z <= 0) {
-		instance_create_layer(x,y,layer,BulletHitFloor)
+		instance_create_layer(x,y,layer,Splash)
 		instance_destroy()
 	}
 	var factor = ((count-(speed/4))/speed)

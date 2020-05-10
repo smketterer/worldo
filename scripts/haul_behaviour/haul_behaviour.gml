@@ -7,6 +7,13 @@ with Resource {
 		resource = self
 	}
 }
+
+var is_zone = get_closest_unclaimed_resource(Zone)
+if !is_zone and !resource {
+	queue_pop()
+	return
+}
+
 if !resource and hauling == noone {
 	// No resource, find closest unclaimed storable item
 	refresh_grid()

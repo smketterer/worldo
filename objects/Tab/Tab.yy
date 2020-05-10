@@ -1,28 +1,18 @@
 {
-    "id": "4dda7d2b-0d34-4f2c-8853-501913210dff",
+    "id": "99870e7c-7c47-4e45-94d7-f32edca4b350",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "TabBuild",
+    "name": "Tab",
     "eventList": [
         {
-            "id": "3326bab3-f9cb-4e8b-ad83-74f99e19ee2e",
+            "id": "a4339fe3-1a0a-4768-a21b-2bd6bbd1c7ea",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 0,
-            "m_owner": "4dda7d2b-0d34-4f2c-8853-501913210dff"
-        },
-        {
-            "id": "1578b60f-6d59-45eb-82c4-d5e2e1ce56cd",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 10,
-            "eventtype": 7,
-            "m_owner": "4dda7d2b-0d34-4f2c-8853-501913210dff"
+            "m_owner": "99870e7c-7c47-4e45-94d7-f32edca4b350"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",

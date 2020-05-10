@@ -53,20 +53,22 @@ switch active_panel {
 				draw_text(8+68,top+31,capitalize(string(ff)))
 				draw_line(8+67,top+44,8+65+string_width(ff),top+44)
 				draw_set_colour(c_white)
-				
 				draw_text(8,top+47,string(inspecting.age) + " year old " + inspecting.sex)
+				
+				
+				var sectionoffset = top+82
 				draw_set_colour(c_black)
-				draw_line(0,top+66,tab_width-1,top+66)
+				draw_line(0,sectionoffset,tab_width-1,sectionoffset)
 				draw_set_colour(make_color_rgb(20,20,20))
-				draw_line(1,top+67,tab_width-1,top+67)
+				draw_line(1,sectionoffset+1,tab_width-1,sectionoffset+1)
 				draw_set_colour(c_white)
 				
-				var sectionoffset = top+72
+				sectionoffset += 4
 				draw_set_colour(c_gray)
 				draw_text(8,sectionoffset,"Skills")
 				draw_set_colour(c_white)
 				
-				sectionoffset = top+86
+				sectionoffset += 13
 				draw_sprite(icons0,0,8,sectionoffset+2)
 				draw_text(8+13,sectionoffset,capitalize(string(inspecting.chopping_skill)))
 				draw_sprite(icons0,1,8+round(tab_width/8),sectionoffset+2)
@@ -77,8 +79,10 @@ switch active_panel {
 				draw_text(8+13+round(tab_width*3/8),sectionoffset,capitalize(string(inspecting.hauling_skill)))
 				draw_sprite(icons0,4,8+round(tab_width*4/8),sectionoffset+2)
 				draw_text(8+13+round(tab_width*4/8),sectionoffset,capitalize(string(inspecting.shooting_skill)))
+				draw_sprite(icons0,5,8+round(tab_width*5/8),sectionoffset+2)
+				draw_text(8+13+round(tab_width*5/8),sectionoffset,capitalize(string(inspecting.move_speed)))
 				
-				sectionoffset = top+107
+				sectionoffset += 18
 				draw_set_colour(c_black)
 				draw_line(0,sectionoffset,tab_width-1,sectionoffset)
 				draw_set_colour(make_color_rgb(20,20,20))

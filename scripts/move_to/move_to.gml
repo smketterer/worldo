@@ -7,6 +7,13 @@ var cs = Manager.cellsize
 mp_grid_add_instances(grid, Block, false)
 mp_grid_add_instances(grid, PassThrough, false)
 
+// Clear floor layer blocks
+with (all) {
+	if layer == layer_get_id("Floors") and not (place_meeting(x,y,Block) or place_meeting(x,y,PassThrough)) {
+		mp_grid_clear_cell(grid,floor(x/cs),floor(y/cs))
+	}
+}
+
 // Clear storable zones
 with (Zone) {
 	mp_grid_clear_cell(grid, floor(x/cs), floor(y/cs))

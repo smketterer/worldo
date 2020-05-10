@@ -15,6 +15,7 @@ if (point_in_rectangle(mousex, mousey, 0, window_get_height()-top, tab_width, wi
 if cursor_mode == "select" {
 	reset_active_panel()
 	
+	// Select multiple
 	if not keyboard_check(vk_control) {
 		for (var i=0; i<ds_list_size(selected); i++) {
 			if instance_exists(ds_list_find_value(selected, i)) {
@@ -26,14 +27,24 @@ if cursor_mode == "select" {
 		selected = ds_list_create()
 	}
 
+	// Stack selection
+	var instances = ds_list_create()
 	var instance = instance_position(mouse_x, mouse_y, Entity)
+	instance_position_list(mouse_x,mouse_y,Entity,instances,false)
+	for (var j=0; j<ds_list_size(instances); j++) {
+		var item = ds_list_find_value(instances,j)
+		if inspecting == item and j < ds_list_size(instances)-1 {
+			instance = ds_list_find_value(instances,j+1)
+		}
+	}
 	
+	// Inspect item
 	if instance and object_is_ancestor(instance.object_index, Entity) and ds_list_find_index(selected, instance) < 0 {
 		var i = ds_list_find_index(selected, instance)
 		ds_list_add(selected, instance)
 		instance.selected = true
-		set_active_panel("Inspecting")
 		inspecting = instance
+		set_active_panel("Inspecting")
 		bbox = false
 	} else {
 		bbox = true
@@ -58,15 +69,30 @@ if cursor_mode == "select" {
 	if active_blueprint {
 		var mouse_xx = floor(mouse_x/cellsize)*cellsize
 		var mouse_yy = floor(mouse_y/cellsize)*cellsize
+		
+		var meeting_non_floor_instance = false
+		var instances = ds_list_create()
+		instance_position_list(mouse_xx,mouse_yy,Entity,instances,false)
+		for (var j=0; j<ds_list_size(instances); j++) {
+			var item = ds_list_find_value(instances,j)
+			if layer_get_name(item.layer) != "Floors" {
+				meeting_non_floor_instance = true
+			}
+		}
 	
-		if !instance_position(mouse_xx,mouse_yy,Zone) {
-			var blueprint = instance_create_layer(mouse_xx,mouse_yy,"Instances",Blueprint)
+		if !instance_position(mouse_xx,mouse_yy,Zone) and not meeting_non_floor_instance {
+			// Check if it's a floor, in which case put blueprint on floor layer
+			if active_blueprint == Floor {
+				var blueprint = instance_create_layer(mouse_xx,mouse_yy,"Floors",Blueprint)
+			} else {
+				var blueprint = instance_create_layer(mouse_xx,mouse_yy,"Instances",Blueprint)
+			}
 			blueprint.object = active_blueprint
 			blueprint.requirement = get_object_requirement(active_blueprint)
 			blueprint.work = get_object_work(active_blueprint)
 			blueprint.description = "A " + string(get_object_name(active_blueprint)) + " blueprint."
 		} else {
-			log("can't build on a zone")
+			log("can't build here")
 		}
 	} else {
 		cursor_mode = "select"

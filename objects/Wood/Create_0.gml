@@ -1,3 +1,3 @@
 event_inherited()
 
-description = "Logs, used for building."
+description = "Logs."

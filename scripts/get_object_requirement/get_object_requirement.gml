@@ -9,6 +9,8 @@ switch object {
 		return Stone
 	case Couch:
 		return Wood
+	case Floor:
+		return Wood
 	default:
 		return noone
 }

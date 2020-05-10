@@ -2,7 +2,7 @@
     "id": "ac1a37b6-2a7a-43b0-9d39-cc19ec9f2c36",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "BulletHitFloor",
+    "name": "Splash",
     "eventList": [
         {
             "id": "a44562f2-8f2f-4387-b614-327e621028d3",

@@ -1,3 +1,17 @@
+if debug {
+	draw_set_alpha(.2)
+	mp_grid_draw(grid)
+	draw_set_alpha(1)
+}
+
+#region Floor entities
+with Entity {
+	if layer_get_name(layer) == "Floors" {
+		draw_self()
+	}
+}
+#endregion
+
 #region Y-sorting
 var y_order = ds_grid_create(2,1)
 var count = instance_number(Entity)
@@ -11,7 +25,7 @@ var yy = 0; with Entity {
 
 ds_grid_sort(y_order, 1, true)
 
-// Render instances
+// Render instances and floors
 yy = 0; repeat(count) {
 	var instance = y_order[# 0, yy]
 	with (instance) {
@@ -21,6 +35,7 @@ yy = 0; repeat(count) {
 	}
 	yy++
 }
+#endregion
 
 #region Lighting rendering
 // Update the shadow map
@@ -42,7 +57,7 @@ if(exists) {
 }
 #endregion
 
-// Render top instances
+#region Render top instances
 yy = 0; repeat(count) {
 	var instance = y_order[# 0, yy]
 	with (instance) {

@@ -49,11 +49,17 @@ if ds_list_size(resources) == 0 and hauling == noone {
 				}
 			}
 		}
+		if ds_list_size(resources) <= 1 {
+			// Only a blueprint, no resources
+			queue_pop()
+		}
 	}
 } else if hauling {
 	// Is hauling item, place on blueprint and begin work
 	hauling.x = x
 	hauling.y = y
+	
+	log("hauling")
 	
 	if path_position == 1 {
 		// Place resources
