@@ -1,5 +1,7 @@
 event_inherited()
 
+hunger -= hunger_rate * Manager.timescale
+
 if !aiming {
 	aim_dir = direction
 }

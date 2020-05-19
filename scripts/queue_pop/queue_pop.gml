@@ -2,4 +2,5 @@
 
 ds_priority_delete_max(tasks)
 
+evaluate_needs()
 reset_resource_claims()

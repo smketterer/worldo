@@ -21,9 +21,13 @@ switch (ds_priority_find_max(tasks)) {
 	case "BUILD":
 		build_behaviour()
 		break
+	case "EAT":
+		eat_behaviour()
+		break
 	case "DRAFT":
 		break
 	default:
+		evaluate_needs()
 		break
 }
 

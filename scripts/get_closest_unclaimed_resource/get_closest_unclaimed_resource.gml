@@ -1,6 +1,7 @@
 /// @desc Get nearest resource of type that someone else isn't working on.
 /// @arg object Object class to get.
 /// @arg ignore_stored Ignore objects in storage.
+/// @arg designated_only Only look for designated objects.
 
 var object = argument[0]
 
@@ -9,7 +10,7 @@ with (object) {
 	if argument_count > 1 and argument[1] and stored {
 		continue
 	}
-	if not claimed {
+	if not claimed and !(argument_count > 2 and argument[2] and !designated) {
 		ds_list_add(objects, self);
 	}
 }

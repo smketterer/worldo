@@ -40,7 +40,14 @@ with Person {
 }
 
 with Storable {
+	var instance = self
 	layer_add_instance(initial_layer,self)
+	with Zone {
+		if claimed_by == instance {
+			claimed = false
+			claimed_by = noone
+		}
+	}
 }
 
 ds_map_destroy(m)

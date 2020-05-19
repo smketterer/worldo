@@ -1,8 +1,3 @@
-// Needs base
-hungry = 100
-tired = 100
-isolated = 100
-
 // Drawing
 draw_y = y
 dir = 1
@@ -31,7 +26,13 @@ sex = "female"
 first_name = get_name("fn_female")
 nickname = get_name("nn_female")
 last_name = get_name("ln")
-age = floor(18 + random(80 - 18))
+age = floor(25 + gauss(10,10))
 name = first_name + " '" + nickname + "' " + last_name
+
+// Needs base
+hunger = 50
+hunger_rate = gauss(1,.25)/250
+fatigue = 100
+isolation = 100
 
 event_inherited()

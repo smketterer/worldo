@@ -1,0 +1,1 @@
+Manager.active_subpanel = "Social"

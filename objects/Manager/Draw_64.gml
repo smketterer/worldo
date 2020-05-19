@@ -17,7 +17,7 @@ if mouse_check_button(mb_left) and bbox {
 	draw_rectangle(mouse_gui_x, mouse_gui_y, window_mouse_get_x(), window_mouse_get_y(), true)
 }
 draw_text(5,16,"[" + string(mouse_x) + ", " + string(mouse_y) + "]")
-draw_text(5,28,"zoom: " + string(2 - Camera.zoom_level))
+draw_text(5,28,"fps: " + string(fps))
 draw_text(5,40,"timescale: " + string(timescale))
 draw_text(5,52,string(floor(hours % 24))+":"+string(round(minutes % 60)))
 draw_text(5,64,string(day)+" day of "+string(season)+", Year "+string(year))
@@ -42,7 +42,7 @@ switch active_panel {
 			if inspecting.object_index == Person or object_is_ancestor(inspecting.object_index, Person) {
 				// Person
 				draw_text(8,top+17,inspecting.name)
-				draw_health_bar(top)
+				draw_health_bar(top,60)
 				
 				var ff = inspecting.faction
 				if string_length(ff) > 0 and ff == "player" {
@@ -100,7 +100,7 @@ switch active_panel {
 					obj_name = capitalize(obj_name)
 				}
 				draw_text(8,top+17,obj_name)
-				draw_health_bar(top)
+				draw_health_bar(top,60)
 				
 				draw_text(8,top+47,"Work remaining: " + string(round(inspecting.work)))
 				draw_set_colour(c_gray)
@@ -116,7 +116,7 @@ switch active_panel {
 					obj_name = capitalize(obj_name)
 				}
 				draw_text(8,top+17,obj_name)
-				draw_health_bar(top)
+				draw_health_bar(top,60)
 				
 				draw_set_colour(c_gray)
 				draw_text_ext(8,top+47,inspecting.description,12,tab_width-22)
@@ -129,6 +129,43 @@ switch active_panel {
 		break
 	default:
 		break
+}
+if instance_exists(inspecting) {
+	if active_subpanel != "none" {
+		var top = window_get_height() - tab_height
+		var bottom = window_get_height() - 15
+		draw_set_colour(make_color_rgb(7,7,8))
+		draw_rectangle(tab_width,top, tab_width*2, bottom-1, false)
+		draw_set_colour(c_black)
+		draw_rectangle(tab_width,top, tab_width*2, bottom-1, true)
+		draw_set_colour(make_color_rgb(20,20,20))
+		draw_rectangle(tab_width+1,top+1,(tab_width*2)-1, bottom-1, true)
+		draw_set_colour(c_gray)
+		draw_text(tab_width+8,top+4,active_subpanel)
+		draw_set_colour(c_white)
+	}
+	switch active_subpanel {
+		case "Needs":
+			var sectionoffset = top+17
+			draw_set_colour(c_white)
+			draw_text(tab_width+8,sectionoffset,"Hunger ")
+			var hunger_string = "Satiated"
+			if inspecting.hunger > 75 {
+				hunger_string = "Full"
+				draw_set_colour(merge_colour(c_blue,c_aqua,.5))
+			}
+			if inspecting.hunger < 50 {
+				hunger_string = "Hungry"
+				draw_set_colour(c_red)
+			}
+			if inspecting.hunger < 25 {
+				hunger_string = "Starving"
+				draw_set_colour(c_maroon)
+			}
+			draw_text(tab_width+8+string_width("Hunger "),sectionoffset,hunger_string)
+			draw_set_colour(c_white)
+			break
+	}
 }
 #endregion
 

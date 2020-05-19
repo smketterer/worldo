@@ -1,4 +1,5 @@
 active_panel = "none"
+active_subpanel = "none"
 with BuildItemButton {
 	instance_destroy()
 }

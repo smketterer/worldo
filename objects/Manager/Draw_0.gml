@@ -90,6 +90,9 @@ with (Entity) {
 		draw_sprite_part(select0,image_index,14,14,6,6,x+sprite_width-4,y+sprite_height-4)
 		draw_sprite_part(select0,image_index,0,14,6,6,x-2,y+sprite_height-4)
 	}
+	if (variable_instance_exists(self,"designated") and designated) {
+		draw_sprite(designated0, image_index, x-16+sprite_width, y-16+sprite_height)
+	}
 	gpu_set_blendmode(bm_normal)
 }
 #endregion
@@ -106,4 +109,10 @@ if cursor_mode == "build" and active_blueprint {
 	draw_set_alpha(.5)
 	draw_sprite(object_get_sprite(active_blueprint),image_index,mouse_xx,mouse_yy)
 	draw_set_alpha(1)
+}
+
+if cursor_mode == "zone" {
+	var mouse_xx = floor(mouse_x/cellsize)*cellsize
+	var mouse_yy = floor(mouse_y/cellsize)*cellsize
+	draw_sprite_ext(object_get_sprite(Zone),image_index,mouse_xx,mouse_yy,1,1,0,c_red,.2)
 }

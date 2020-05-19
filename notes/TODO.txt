@@ -1,3 +1,8 @@
+Bugs:
+- Claimed are saved when hauling items to stockpile, but items are dropped.
+- Sometimes there's no path to a blueprint, and the player will just create the item telekinetically.
+
+
 tasks: gardening, crafting, doctor, patient, basic, cook, hunt, construct, haul, mining
 
 

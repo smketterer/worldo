@@ -10,7 +10,7 @@ with Resource {
 if !resource {
 	// No resource, find closest unclaimed bush
 	refresh_grid()
-	var closest = get_closest_unclaimed_resource(Bush)
+	var closest = get_closest_unclaimed_resource(Bush, false, true)
 	if closest {
 		move_to(closest.x, closest.y)
 		closest.claimed = true

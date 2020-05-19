@@ -9,6 +9,7 @@ mp_grid_add_instances(Manager.grid, Block, false)
 mp_grid_add_instances(Manager.grid, PassThrough, false)
 
 draw_set_font(font0)
+create_starter_persons()
 
 #region console
 debug = false
@@ -55,6 +56,7 @@ current_darkness = array_get(phase[0],2)
 // UI
 cursor_mode = "select"
 active_panel = "none"
+active_subpanel = "none"
 tab_height = 256
 tab_width = 191
 active_blueprint = noone

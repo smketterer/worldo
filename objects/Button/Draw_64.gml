@@ -9,8 +9,6 @@ if active {
 	draw_set_alpha(.25)
 }
 draw_set_halign(fa_center)
-draw_text(x+(sprite_width/2),y+active,text)
+draw_text(x+(sprite_width/2),y+1+active,text)
 draw_set_halign(fa_left)
 draw_set_alpha(1)
-
-

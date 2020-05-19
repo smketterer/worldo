@@ -97,4 +97,10 @@ if cursor_mode == "select" {
 	} else {
 		cursor_mode = "select"
 	}
+} else if cursor_mode == "zone" {
+	var mouse_xx = floor(mouse_x/cellsize)*cellsize
+	var mouse_yy = floor(mouse_y/cellsize)*cellsize
+	if !instance_position(mouse_xx,mouse_yy,all) {
+		instance_create_layer(mouse_xx,mouse_yy,"Floors",Zone)
+	}
 }

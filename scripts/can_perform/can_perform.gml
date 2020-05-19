@@ -12,13 +12,17 @@ switch ai_state {
 	case "CHOP":
 		var any_trees = false
 		with (Tree) {
-			any_trees = true
+			if designated and !claimed {
+				any_trees = true
+			}
 		}
 		return any_trees
 	case "CUT":
 		var any_bushes = false
 		with (Bush) {
-			any_bushes = true
+			if designated and !claimed {
+				any_bushes = true
+			}
 		}
 		return any_bushes
 	case "HAUL":
@@ -45,6 +49,14 @@ switch ai_state {
 			}
 		}
 		return any_blueprint
+	case "EAT":
+		var any_food = false
+		with (Berries) {
+			if !claimed {
+				any_food = true
+			}
+		}
+		return any_food
 	default:
 		return false
 }

@@ -16,6 +16,8 @@ switch (task) {
 		return "Hauling items"
 	case "BUILD":
 		return "Building items"
+	case "EAT":
+		return "Looking for food"
 	default:
 		return "Idle"
 }
