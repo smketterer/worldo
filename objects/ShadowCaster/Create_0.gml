@@ -2,7 +2,7 @@ event_inherited()
 
 // Child objects set this
 polygon = polygon_from_instance(id);
-shadow_length = sprite_height * 6;
+shadow_length = sprite_height * 4;
 
 // Default shadow caster flags
 flags = eShadowCasterFlags.None;

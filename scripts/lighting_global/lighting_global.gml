@@ -36,7 +36,7 @@ global.lightMaxUniqueShadowMapSize = 256;
 
 // Delay in frames between light updates
 // You can force the lighting system to update with lighting_set_dirty(true)
-global.lightUpdateFrameDelay = 1;
+global.lightUpdateFrameDelay = 2;
 
 // Default extension modules given to lights upon creation
 // This can be modified before creating any lights (or at any time otherwise)
