@@ -1,8 +1,12 @@
 {
-    "id": "2e2c5ecf-2cb5-8740-4036-76734492750a",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "txr_compile_patch_break_continue",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Compiler",
+    "path": "folders/Scripts/System/Tiny Expression Runtime/Compiler.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "txr_compile_patch_break_continue",
+  "tags": [],
+  "resourceType": "GMScript",
 }

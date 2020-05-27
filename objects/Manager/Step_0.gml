@@ -38,7 +38,7 @@ current_darkness = array_get(current_phase,2) - ((array_get(current_phase,2) - a
 #endregion
 
 #region Lighting tick
-++tick;
+tick += 1;
 #endregion
 
 #region Time scaling

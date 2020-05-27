@@ -9,7 +9,7 @@ if active_panel == "none" {
 }
 if (point_in_rectangle(mousex, mousey, 0, window_get_height()-top, tab_width, window_get_height())) {
 	bbox = false
-	return
+	exit
 }
 
 if cursor_mode == "select" {

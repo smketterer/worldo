@@ -9,67 +9,67 @@ var h = w
 if top_meeting && bottom_meeting && right_meeting && left_meeting {
 	facing = 1
 	draw_sprite_part_ext(tileset,image_index,w*2,0,w,h,x,y,facing,image_yscale,image_blend,1)
-	return
+	exit
 }
 if bottom_meeting && right_meeting {
 	facing = 1
 	draw_sprite_part_ext(tileset,image_index,0,0,w,h,x,y,facing,image_yscale,image_blend,1)
-	return
+	exit
 }
 if bottom_meeting && left_meeting {
 	facing = -1
 	draw_sprite_part_ext(tileset,image_index,0,0,w,h,x+w,y,facing,image_yscale,image_blend,1)
-	return
+	exit
 }
 
 if bottom_meeting && top_meeting {
 	if instance_place(x,y-1,object_index).facing == 1 {
 		facing = 1
 		draw_sprite_part_ext(tileset,image_index,0,h,w,h,x,y,facing,image_yscale,image_blend,1)
-		return
+		exit
 	} else {
 		facing = -1
 		draw_sprite_part_ext(tileset,image_index,0,h,w,h,x+w,y,facing,image_yscale,image_blend,1)
-		return
+		exit
 	}
 }
 
 if top_meeting && right_meeting {
 	facing = 1
 	draw_sprite_part_ext(tileset,image_index,0,h*2,w,h,x,y,facing,image_yscale,image_blend,1)
-	return
+	exit
 }
 
 if top_meeting && left_meeting {
 	facing = -1
 	draw_sprite_part_ext(tileset,image_index,0,h*2,w,h,x+w,y,facing,image_yscale,image_blend,1)
-	return
+	exit
 }
 
 if top_meeting {
 	if instance_place(x,y-1,object_index).facing == 1 {
 		facing = 1
 		draw_sprite_part_ext(tileset,image_index,w,h*2,w,h,x,y,facing,image_yscale,image_blend,1)
-		return
+		exit
 	} else {
 		facing = -1
 		draw_sprite_part_ext(tileset,image_index,w,h*2,w,h,x+w,y,facing,image_yscale,image_blend,1)
-		return
+		exit
 	}
-	return
+	exit
 }
 
 if bottom_meeting {
 	if instance_place(x,y+1,object_index).facing == 1 {
 		facing = 1
 		draw_sprite_part_ext(tileset,image_index,w,h*1,w,h,x,y,facing,image_yscale,image_blend,1)
-		return
+		exit
 	} else {
 		facing = -1
 		draw_sprite_part_ext(tileset,image_index,w,h*1,w,h,x+w,y,facing,image_yscale,image_blend,1)
-		return
+		exit
 	}
-	return
+	exit
 }
 
 draw_sprite_part_ext(tileset,image_index,w,0,w,h,x,y,image_xscale,image_yscale,image_blend,1)

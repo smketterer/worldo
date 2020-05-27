@@ -1,0 +1,19 @@
+Bugs:
+- Claimed are saved when hauling items to stockpile, but items are dropped.
+- Sometimes there's no path to a blueprint, and the player will just create the item telekinetically.
+
+
+tasks: gardening, crafting, doctor, patient, basic, cook, hunt, construct, haul, mining
+
+
+First pass at:
+- Basic combat (drafting, auto-fire, melee, weapon equip)
+- Basic survival (food, gathering resources)
+- Crafting (crafting benches, walls, prepared food and items)
+- Character customization (random, selecting properties from menu)
+- Grid and grid overlay for item placement
+- Lighting
+
+Inspo:
+- Rimworld
+- Minecraft

@@ -1,8 +1,12 @@
 {
-    "id": "edc780f0-db69-4fa9-909f-4a77e620dd21",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "tab_social",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Callbacks",
+    "path": "folders/Scripts/UI/Callbacks.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "tab_social",
+  "tags": [],
+  "resourceType": "GMScript",
 }

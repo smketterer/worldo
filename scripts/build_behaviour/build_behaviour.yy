@@ -1,8 +1,12 @@
 {
-    "id": "edca3fa5-3225-40cf-aeda-2e7914d8cfaa",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "build_behaviour",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Tasks",
+    "path": "folders/Scripts/AI/Tasks.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "build_behaviour",
+  "tags": [],
+  "resourceType": "GMScript",
 }

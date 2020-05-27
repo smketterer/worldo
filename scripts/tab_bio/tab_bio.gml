@@ -1,1 +1,5 @@
-Manager.active_subpanel = "Bio"
+function tab_bio() {
+	Manager.active_subpanel = "Bio"
+
+
+}

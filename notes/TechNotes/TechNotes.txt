@@ -1,0 +1,3 @@
+Common problems:
+- Need to prevent flickering on paths that aren't viable in defend_behaviour
+- Lights and random objects have to be initialized after Manager, otherwise initialization variables will be missing or seed won't be randomized

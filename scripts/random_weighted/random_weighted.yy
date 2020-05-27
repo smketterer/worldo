@@ -1,8 +1,12 @@
 {
-    "id": "7549b5bd-b154-4edd-88b4-f0a8763297f3",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "random_weighted",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Helpers",
+    "path": "folders/Scripts/Helpers.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "random_weighted",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,8 +1,12 @@
 {
-    "id": "66fd4fe6-452c-4b1e-b9aa-48186aa6890f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "cut_behaviour",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Tasks",
+    "path": "folders/Scripts/AI/Tasks.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "cut_behaviour",
+  "tags": [],
+  "resourceType": "GMScript",
 }

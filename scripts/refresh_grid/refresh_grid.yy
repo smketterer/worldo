@@ -1,8 +1,12 @@
 {
-    "id": "580de42b-af91-401f-924c-cc724c77753c",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "refresh_grid",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "AI",
+    "path": "folders/Scripts/AI.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "refresh_grid",
+  "tags": [],
+  "resourceType": "GMScript",
 }

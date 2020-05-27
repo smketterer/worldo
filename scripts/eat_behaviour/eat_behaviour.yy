@@ -1,8 +1,12 @@
 {
-    "id": "de9053f8-92eb-44c0-aa6d-76d3156098f7",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "eat_behaviour",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Tasks",
+    "path": "folders/Scripts/AI/Tasks.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "eat_behaviour",
+  "tags": [],
+  "resourceType": "GMScript",
 }

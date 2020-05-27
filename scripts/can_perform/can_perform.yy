@@ -1,8 +1,12 @@
 {
-    "id": "7abf2789-628c-46e2-8d9e-67f2ef0c234f",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "can_perform",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "AI",
+    "path": "folders/Scripts/AI.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "can_perform",
+  "tags": [],
+  "resourceType": "GMScript",
 }

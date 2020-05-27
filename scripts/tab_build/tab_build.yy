@@ -1,8 +1,12 @@
 {
-    "id": "a1867b37-296e-4ba2-b51e-1405e2792ed5",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "tab_build",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Callbacks",
+    "path": "folders/Scripts/UI/Callbacks.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "tab_build",
+  "tags": [],
+  "resourceType": "GMScript",
 }

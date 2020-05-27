@@ -1,8 +1,12 @@
 {
-    "id": "a34a9c89-36af-42df-ba48-4028148fc7bb",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "chop_behaviour",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "Tasks",
+    "path": "folders/Scripts/AI/Tasks.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "chop_behaviour",
+  "tags": [],
+  "resourceType": "GMScript",
 }

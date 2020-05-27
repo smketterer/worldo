@@ -1,1 +1,5 @@
-log("button pressed")
+function button_default() {
+	log("button pressed")
+
+
+}
