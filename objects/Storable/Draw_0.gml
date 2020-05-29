@@ -1,4 +1,4 @@
-if not (claimed_by and claimed_by.hauling == self) {
+if !(claimed_by and claimed_by.hauling == self.id) {
 	event_inherited()
 	if stored {
 		draw_sprite(stored0,image_index,x,y)

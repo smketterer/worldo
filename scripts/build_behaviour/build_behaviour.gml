@@ -86,6 +86,4 @@ function build_behaviour() {
 			}
 		}
 	}
-
-
 }

@@ -26,6 +26,4 @@ function chop_behaviour() {
 			resource.hp -= ((chopping_skill / 10) * Manager.timescale)
 		}
 	}
-
-
 }

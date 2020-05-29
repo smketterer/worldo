@@ -6,7 +6,7 @@
     "path": "folders/Scripts/AI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "get_closest_enemy",
+  "name": "get_closest_things",
   "tags": [],
   "resourceType": "GMScript",
 }

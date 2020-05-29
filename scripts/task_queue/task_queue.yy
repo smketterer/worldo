@@ -6,7 +6,7 @@
     "path": "folders/Scripts/AI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "queue_add",
+  "name": "task_queue",
   "tags": [],
   "resourceType": "GMScript",
 }
