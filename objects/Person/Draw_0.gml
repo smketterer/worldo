@@ -35,10 +35,14 @@ if current_xscale < 0 {
 var kickback_x = lengthdir_x(current_handsoffset*gun_xscale*gun_yscale,visual_aim_dir)
 var kickback_y = lengthdir_y(current_handsoffset*gun_xscale*gun_yscale,visual_aim_dir)
 
-if ydir == 1 {
+if ydir == 1 { // facing up
 	if hauling == noone {
 		// check if has weapon and is drafted
-		if ds_list_find_index(equip,Shotgun) >= 0 and ds_priority_find_max(tasks) == "DEFEND" {
+		if ds_priority_find_max(tasks) == "SLEEP" {
+			// sleepy hands
+			draw_sprite_ext(handsSleep, image_index, x+8, draw_y+10, current_xscale, image_yscale, image_angle, image_blend, image_alpha)
+		}
+		else if ds_list_find_index(equip,Shotgun) >= 0 and ds_priority_find_max(tasks) == "DEFEND" {
 			draw_sprite_ext(handsShotgun, image_index, x+8+kickback_x, draw_y+5+kickback_y, current_xscale*gun_xscale, image_yscale*gun_yscale, visual_aim_dir, image_blend, image_alpha)
 			barrel_x = x+8-(gun_xscale*2)
 			barrel_y = draw_y+3
@@ -51,12 +55,24 @@ if ydir == 1 {
 		}
 	}
 }
+
+// draw shadow
 draw_sprite_ext(shadow0, image_index, x+8, y+8, image_xscale, image_yscale, image_angle, image_blend, abs(sqr(Manager.current_darkness)-1))
-draw_sprite_ext(sprite_index, ydir, x+8, draw_y+8, current_xscale, image_yscale, image_angle, image_blend, image_alpha)
-if ydir == 0 {
+// draw sprite
+if (ds_priority_find_max(tasks) == "SLEEP") {
+	draw_sprite_ext(sprite_index, 2, x+8, draw_y+9, current_xscale, image_yscale, image_angle, image_blend, image_alpha)
+} else {
+	draw_sprite_ext(sprite_index, ydir, x+8, draw_y+8, current_xscale, image_yscale, image_angle, image_blend, image_alpha)
+}
+
+if ydir == 0 { // facing down
 	if hauling == noone {
-		// check if has weapon and is drafted
-		if ds_list_find_index(equip,Shotgun) >= 0 and ds_priority_find_max(tasks) == "DEFEND" {
+		if ds_priority_find_max(tasks) == "SLEEP" {
+			// sleepy hands
+			draw_sprite_ext(handsSleep, image_index, x+8, draw_y+10, current_xscale, image_yscale, image_angle, image_blend, image_alpha)
+		}
+		else if ds_list_find_index(equip,Shotgun) >= 0 and ds_priority_find_max(tasks) == "DEFEND" {
+			// check if has weapon and is drafted
 			draw_sprite_ext(handsShotgun, image_index, x+8-(gun_xscale)+kickback_x, draw_y+8+kickback_y, current_xscale*gun_xscale, image_yscale*gun_yscale, visual_aim_dir, image_blend, image_alpha)
 			barrel_x = x+8+(gun_xscale*2)
 			barrel_y = draw_y+6

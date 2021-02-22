@@ -41,53 +41,18 @@ current_darkness = array_get(current_phase,2) - ((array_get(current_phase,2) - a
 tick += 1;
 #endregion
 
-#region Time scaling
-if keyboard_check_pressed(vk_pageup) {
-	if timescale < 5 {
-		timescale += .5
-		var ts = timescale
-		with (Worker) {
-			path_speed = base_path_speed * ts	
-		}
-		with (Bullet) {
-			speed = base_bullet_speed * ts	
-		}
-	}
-}
-
-if keyboard_check_pressed(vk_pagedown) {
-	if timescale > 0 {
-		timescale -= .5
-		var ts = timescale
-		with (Worker) {
-			path_speed = base_path_speed * ts
-		}
-		with (Bullet) {
-			speed = base_bullet_speed * ts	
-		}
-	}
-}
-
-if keyboard_check_pressed(vk_space) {
-	if timescale != 0 {
-		prev_timescale = timescale
-		timescale = 0
-	} else {
-		timescale = prev_timescale
-	}
-	var ts = timescale
-	with (Worker) {
-		path_speed = base_path_speed * ts
-	}
-	with (Bullet) {
-		speed = base_bullet_speed * ts	
-	}
-}
-#endregion
-
+#region Time scaling and keys
 if keyboard_check_pressed(vk_f12) {
 	debug = !debug
 	keyboard_string = ""
+}
+
+if keyboard_check_pressed(vk_escape) {
+	if debug {
+		debug = false
+	} else {
+		game_end()
+	}
 }
 
 if debug {
@@ -150,15 +115,87 @@ if debug {
 	if keyboard_check_pressed(vk_down) {
 		text = ""
 	}
+	return
 }
 
-if keyboard_check_pressed(vk_escape) {
-	if debug {
-		debug = false
-	} else {
-		game_end()
+if keyboard_check_pressed(vk_pageup) {
+	if timescale < 5 {
+		timescale += .5
+		var ts = timescale
+		with (Worker) {
+			path_speed = base_path_speed * ts	
+		}
+		with (Bullet) {
+			speed = base_bullet_speed * ts	
+		}
 	}
 }
+
+if keyboard_check_pressed(vk_pagedown) {
+	if timescale > 0 {
+		timescale -= .5
+		var ts = timescale
+		with (Worker) {
+			path_speed = base_path_speed * ts
+		}
+		with (Bullet) {
+			speed = base_bullet_speed * ts	
+		}
+	}
+}
+
+if keyboard_check_pressed(ord("1")) {
+	timescale = 1;	
+	
+	var ts = timescale
+	with (Worker) {
+		path_speed = base_path_speed * ts
+	}
+	with (Bullet) {
+		speed = base_bullet_speed * ts	
+	}
+}
+
+if keyboard_check_pressed(ord("2")) {
+	timescale = 2.5;
+	
+	var ts = timescale
+	with (Worker) {
+		path_speed = base_path_speed * ts
+	}
+	with (Bullet) {
+		speed = base_bullet_speed * ts	
+	}
+}
+
+if keyboard_check_pressed(ord("3")) {
+	timescale = 5;
+	
+	var ts = timescale
+	with (Worker) {
+		path_speed = base_path_speed * ts
+	}
+	with (Bullet) {
+		speed = base_bullet_speed * ts	
+	}
+}
+
+if keyboard_check_pressed(vk_space) {
+	if timescale != 0 {
+		prev_timescale = timescale
+		timescale = 0
+	} else {
+		timescale = prev_timescale
+	}
+	var ts = timescale
+	with (Worker) {
+		path_speed = base_path_speed * ts
+	}
+	with (Bullet) {
+		speed = base_bullet_speed * ts	
+	}
+}
+#endregion
 
 if keyboard_check_pressed(vk_f5) {
 	save_game()

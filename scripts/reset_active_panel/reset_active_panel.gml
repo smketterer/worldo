@@ -9,6 +9,4 @@ function reset_active_panel() {
 			instance_destroy()
 		}
 	}
-
-
 }

@@ -1,6 +1,9 @@
 event_inherited()
 
 hunger -= hunger_rate * Manager.timescale
+if !(ds_priority_find_max(tasks) == "SLEEP") {
+	sleep -= sleep_rate * Manager.timescale
+}
 
 if !aiming {
 	aim_dir = direction

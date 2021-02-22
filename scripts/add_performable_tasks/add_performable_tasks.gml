@@ -4,6 +4,4 @@ function add_performable_tasks() {
 			ds_priority_add(tasks, ds_list_find_value(task_order,i), 100)
 		}
 	}
-
-
 }

@@ -58,6 +58,8 @@ function can_perform(argument0) {
 				}
 			}
 			return any_food
+		case "SLEEP":
+			return true
 		default:
 			return false
 	}

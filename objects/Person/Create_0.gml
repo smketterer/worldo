@@ -21,7 +21,7 @@ hands_sprite_index = handsNone
 ds_list_add(equip,Shotgun)
 
 // Generate character settings
-sprite_index = char5
+sprite_index = char4
 sex = "female"
 first_name = get_name("fn_female")
 nickname = get_name("nn_female")
@@ -31,8 +31,14 @@ name = first_name + " '" + nickname + "' " + last_name
 
 // Needs base
 hunger = 50
-hunger_rate = gauss(1,.25)/250
-fatigue = 100
-isolation = 100
+hunger_rate = gauss(1,.25)/100
+sleep = 70
+sleep_rate = gauss(1,.05)/500
+social = 10
+social_rate = gauss(1,.25)/100
+
+// Health base
+blood_loss = 0
+blood_loss_rate = 0
 
 event_inherited()

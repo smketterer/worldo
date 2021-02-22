@@ -123,6 +123,10 @@ switch active_panel {
 				draw_set_colour(c_white)
 			}
 		}
+		else {
+			// Instance doesn't exist, hide
+			active_subpanel = "none"
+		}
 		break
 	case "Build objects":
 		// Buttons added via TabBuild onclick
@@ -147,22 +151,47 @@ if instance_exists(inspecting) {
 	switch active_subpanel {
 		case "Needs":
 			var sectionoffset = top+17
+			
+			// Hunger 
 			draw_set_colour(c_white)
 			draw_text(tab_width+8,sectionoffset,"Hunger ")
-			var hunger_string = "Satiated"
+			draw_set_colour(c_gray)
+			var description_string = "Satiated"
 			if inspecting.hunger > 75 {
-				hunger_string = "Full"
+				description_string = "Full"
 				draw_set_colour(merge_colour(c_blue,c_aqua,.5))
 			}
 			if inspecting.hunger < 50 {
-				hunger_string = "Hungry"
+				description_string = "Hungry"
 				draw_set_colour(c_red)
 			}
 			if inspecting.hunger < 25 {
-				hunger_string = "Starving"
+				description_string = "Starving"
 				draw_set_colour(c_maroon)
 			}
-			draw_text(tab_width+8+string_width("Hunger "),sectionoffset,hunger_string)
+			draw_text(tab_width+8+string_width("Hunger "),sectionoffset,description_string)
+			
+			// Fatigue
+			sectionoffset += 17
+			draw_set_colour(c_white)
+			draw_text(tab_width+8,sectionoffset,"Fatigue ")
+			draw_set_colour(c_gray)
+			var description_string = "Normal"
+			if inspecting.sleep > 75 {
+				description_string = "Rested"
+				draw_set_colour(merge_colour(c_blue,c_aqua,.5))
+			}
+			if inspecting.sleep < 50 {
+				description_string = "Normal"
+				draw_set_colour(c_gray)
+			}
+			if inspecting.sleep < 25 {
+				description_string = "Tired"
+				draw_set_colour(c_maroon)
+			}
+			draw_text(tab_width+8+string_width("Fatigue "),sectionoffset,description_string)
+			
+			// Reset colour
 			draw_set_colour(c_white)
 			break
 	}
@@ -172,13 +201,13 @@ if instance_exists(inspecting) {
 #region person list
 var pix = 0;
 with (Person) {
-	if faction != "player" { break }
+	if faction != "player" { continue }
 	var offset = 104+(32*pix)
 	draw_sprite(select2, image_index, 14, offset)
 	draw_sprite(sprite_index, 0, 13, offset)
 	draw_sprite(hands_sprite_index, 0, 13, offset)
-	draw_text(28, offset - 18, nickname)
-	draw_text(28, offset - 6, string(get_task_label(ds_priority_find_max(tasks))) + " | " + string(hp) + "/" + string(max_hp))
+	draw_text(28, offset - 18, first_name + " '" + nickname + "' " + last_name)
+	draw_text(28, offset - 6, string(get_task_label(ds_priority_find_max(tasks))))
 	pix++
 }
 #endregion

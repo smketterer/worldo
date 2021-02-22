@@ -24,6 +24,9 @@ switch (ds_priority_find_max(tasks)) {
 	case "EAT":
 		eat_behaviour()
 		break
+	case "SLEEP":
+		sleep_behaviour()
+		break
 	case "DRAFT":
 		break
 	default:

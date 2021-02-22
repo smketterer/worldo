@@ -20,10 +20,11 @@ function build_behaviour() {
 		
 			closest.claimed = true
 			closest.claimed_by = self
-			requirement.claimed = true
-			requirement.claimed_by = self
-		
-			move_to(requirement.x, requirement.y)
+			if requirement {
+				requirement.claimed = true
+				requirement.claimed_by = self
+				move_to(requirement.x, requirement.y)
+			}
 		} else {
 			// No resources left, cancel
 			queue_pop()
@@ -34,6 +35,7 @@ function build_behaviour() {
 			var resource = ds_list_find_value(resources,i)
 			if resource.object_index != Blueprint {
 				if path_position == 1 {
+					// @TODO: Double check distance here.
 					resource.work -= ((hauling_skill / 10) * Manager.timescale)
 					if resource.work <= 0 {
 						for (var i=0; i<ds_list_size(resources); i++) {
@@ -59,8 +61,6 @@ function build_behaviour() {
 		// Is hauling item, place on blueprint and begin work
 		hauling.x = x
 		hauling.y = y
-	
-		log("hauling")
 	
 		if path_position == 1 {
 			// Place resources
@@ -148,7 +148,6 @@ function cut_behaviour() {
 	}
 }
 
-
 function defend_behaviour() {
 	if !target or !instance_exists(target) or path_get_number(path) <= 2 {
 		// No target, find closest enemy
@@ -170,7 +169,7 @@ function defend_behaviour() {
 
 			var closest_direction = point_direction(x,y,closest.x,closest.y)
 			var closest_distance = point_distance(x,y,closest.x,closest.y)
-			var distances = [3/4, 1/2, 1/4, 0]
+			var distances = [5/6, 4/5, 3/4, 1/2, 1/4, 0]
 		
 			for (var i=0; i<array_length_1d(distances); i++) {
 				var to_x = lengthdir_x(closest_distance + (closest_distance*-distances[i]), closest_direction)
@@ -212,7 +211,6 @@ function defend_behaviour() {
 		}
 	}
 }
-
 
 function eat_behaviour() {
 	var instance = self
@@ -258,7 +256,6 @@ function eat_behaviour() {
 		}
 	}
 }
-
 
 function haul_behaviour() {
 	var instance = self
@@ -322,5 +319,13 @@ function haul_behaviour() {
 			zone.claimed = true
 			zone.claimed_by = resource
 		}
+	}
+}
+	
+function sleep_behaviour() {
+	sleep += (.0075 * Manager.timescale)
+	
+	if sleep >= 85 {
+		queue_pop()
 	}
 }

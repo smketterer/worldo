@@ -14,4 +14,7 @@ max_hp = 100
 
 age = 0
 
+hunger_rate = 0
+sleep_rate = 0
+
 // equip = ds_list_create()

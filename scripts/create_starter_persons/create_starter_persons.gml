@@ -1,5 +1,5 @@
 function create_starter_persons() {
-	for (var i=0; i<2; i++) {
+	for (var i=0; i<8; i++) {
 		// Find a free block
 		var grid = Manager.grid
 		var xx = round(random(room_width)/Manager.cellsize)
@@ -35,13 +35,28 @@ function create_starter_persons() {
 			person.first_name = get_name("fn_female")
 			person.nickname = get_name("nn_female")
 		} else {
-			person.sprite_index = char5
+			person.sprite_index = char4
 			person.sex = "female"
 			person.first_name = get_name("fn_female")
 			person.nickname = get_name("nn_female")
 		}
 	
 		person.name = person.first_name + " '" + person.nickname + "' " + person.last_name
+	}
+	
+	for (var i=0; i<2; i++) {
+		// Find a free block
+		var grid = Manager.grid
+		var xx = round(random(room_width)/Manager.cellsize)
+		var yy = round(random(room_height)/Manager.cellsize)
+		while (mp_grid_get_cell(grid,xx,yy)) {
+			xx = round(random(room_width)/Manager.cellsize)
+			yy = round(random(room_height)/Manager.cellsize)
+		}
+		xx = xx*Manager.cellsize
+		yy = yy*Manager.cellsize
+	
+		var person = instance_create_layer(xx,yy,"TopInstances",Dummy);
 	}
 
 

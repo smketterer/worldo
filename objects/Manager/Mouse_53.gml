@@ -13,8 +13,6 @@ if (point_in_rectangle(mousex, mousey, 0, window_get_height()-top, tab_width, wi
 }
 
 if cursor_mode == "select" {
-	reset_active_panel()
-	
 	// Select multiple
 	if not keyboard_check(vk_control) {
 		for (var i=0; i<ds_list_size(selected); i++) {

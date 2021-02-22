@@ -26,6 +26,4 @@ function random_weighted() {
 	        rnd -= argument[i];
 	    }
 	}
-
-
 }

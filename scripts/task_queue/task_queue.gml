@@ -47,7 +47,9 @@ function get_task_label(_task) {
 		case "BUILD":
 			return "Building items"
 		case "EAT":
-			return "Looking for food"
+			return "Finding food"
+		case "SLEEP":
+			return "Sleeping"
 		default:
 			return "Idle"
 	}

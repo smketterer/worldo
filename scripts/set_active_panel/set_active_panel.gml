@@ -1,4 +1,4 @@
-function set_active_panel(argument0) {
+function set_active_panel(argument0, argument1) {
 	with BuildItemButton {
 		instance_destroy()
 	}
@@ -7,6 +7,8 @@ function set_active_panel(argument0) {
 			instance_destroy()
 		}
 	}
+	
+	Manager.active_panel = argument0
 
 	if argument0 == "Inspecting" and (Manager.inspecting.object_index == Person or object_is_ancestor(Manager.inspecting.object_index,Person)) {
 		var tabs = ["Needs", "Social", "Bio"]
@@ -27,9 +29,10 @@ function set_active_panel(argument0) {
 					continue
 			}
 		}
+	} else {
+		reset_active_panel()
+		active_subpanel = "none"
 	}
 
-	Manager.active_panel = argument0
-
-
+	
 }
